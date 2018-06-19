@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//PAGES CONTROLLER
+Route::get('/', 'PagesController@index');
+Route::get('/menu', 'PagesController@menu');
 
-Route::get('/main', function(){
-    return view('pages.main');
-});
+//USERS CONTROLLER
+
+
+/*Route::get('/', function () {
+    return view('welcome');
+});*/
