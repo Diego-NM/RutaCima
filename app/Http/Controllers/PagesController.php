@@ -10,7 +10,8 @@ class PagesController extends Controller
        return view('pages.main');
     }
 
-    public function menu(){
-       return view('pages.menu');
+    public function indexAdmin(){
+       return view('admin.main');
     }
+
 }
