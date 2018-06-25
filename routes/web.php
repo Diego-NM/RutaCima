@@ -16,6 +16,9 @@ Route::get('/', 'PagesController@index');
 Route::get('/mainAdmin', 'PagesController@indexAdmin');
 
 //USERS CONTROLLER
+Route::get('createUser', 'UsersController@createUser');
+
+
 
 
 /*Route::get('/', function () {
