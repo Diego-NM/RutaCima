@@ -1,5 +1,35 @@
 $(document).ready(function(){
 
+$("#con_ingresar").click(function(){
+      var email = $("#con_emailInicioSesion").val();
+      var password = $("#con_passwordInicioSesion").val();
+
+      if(email == ""){
+        alert('Digite correo');
+       return false;
+      }
+      if(password == ""){
+          alert('Digite contraseña');
+       return false;
+      }
+      $.ajax({
+            type: 'GET',
+            data: { 'email':email,
+                    'password':password },
+            url: 'validateUser',
+            success: function(data) {
+              if(data == 0){
+                alert("El usuario que intenta ingresar no existe!");
+                $("#con_emailInicioSesion").val("");
+                $("#con_passwordInicioSesion").val("");
+              }else{
+                alert("Usuario Loggeado con éxito!");
+                clearLoginForm();
+              }
+            }
+        });
+});
+
 $("#con_crearUsuario").click(function(){
   var name = $("#con_name").val();
   var firstLastName = $("#con_firstLastName").val();
@@ -10,7 +40,6 @@ $("#con_crearUsuario").click(function(){
   var telephone = $("#con_telephone").val();
   var userName =  $("#con_email").val();
   var password = $("#con_password").val();
-
 
     if(name == ""){
       alert('Digite nombre');
@@ -62,7 +91,12 @@ $("#con_crearUsuario").click(function(){
                    'password':password },
            url: 'createUser',
            success: function(data) {
-             alert("sucess");
+             if(data = 1){
+               alert("El usuario que intenta ingresar ya existe!");
+             }else{
+               alert("Usuario Ingresado con éxito!");
+               clearLoginForm();
+             }
            }
        });
 });
@@ -86,5 +120,23 @@ $("#con_iniciarSesion").click(function(){
   $("#con_ingresar").show();
   $("#con_crearUsuario").hide();
 });
+
+var clearRegisterForm = function(){
+    $("#login").hide();
+    $("#con_name").val("");
+    $("#con_firstLastName").val("");
+    $("#con_secondLastName").val("");
+    $("#con_idNumber").val("");
+    $("#con_age").val("");
+    $("#con_email").val("");
+    $("#con_telephone").val("");
+    $("#con_password").val("");
+}
+
+var clearLoginForm = function(){
+  $("#login").hide();
+  $("#con_emailInicioSesion").val("");
+  $("#con_passwordInicioSesion").val("");
+}
 
 });

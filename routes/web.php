@@ -16,9 +16,11 @@ Route::get('/', 'PagesController@index');
 Route::get('/mainAdmin', 'PagesController@indexAdmin');
 
 //USERS CONTROLLER
-Route::get('createUser', 'UsersController@createUser');
+Route::get('validateUser', 'UsersController@validateUser');
+Route::get('createUser', 'UsersController@validateNewUser');
 
-
+//VIAJE CONTROLLER
+Route::get('selectTour', 'ViajeController@selectAllTours');
 
 
 /*Route::get('/', function () {

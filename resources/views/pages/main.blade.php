@@ -226,36 +226,9 @@
 			<div class="section-title bottom_15">
 				<h2 class="title">TOURS DISPONIBLES<span class="number"></span> </h2>
 			</div>
-			<div class="row">
+			<div class="row" id="toursDiv">
        <!-- CARGADO DINAMICO -->
 
-				<!-- TOUR 1 -->
-				<a href="single-blog.html" class="col-md-4 blog">
-					<div class="image">
-						<img src="{{asset('images/blog-1.jpg')}}" alt="">
-					</div>
-					<span>C</span>
-					<h3 class="title">His boss would certainly come round with the doctor from the medical...</h3>
-					<div class="date">02 March, 2018</div>
-				</a>
-				<!-- TOUR 2 -->
-				<a href="single-blog.html" class="col-md-4 blog">
-					<div class="image">
-						<img src="{{asset('images/blog-2.jpg')}}" alt="">
-					</div>
-					<span>CACHÍ</span>
-					<h3 class="title">Gregor then turned to look out the window at the dull weather.</h3>
-					<div class="date">02 March, 2018</div>
-				</a>
-				<!-- TOUR 3 -->
-				<a href="single-blog.html" class="col-md-4 blog">
-					<div class="image">
-						<img src="{{asset('images/blog-3.jpg')}}" alt="">
-					</div>
-					<span>EVENT</span>
-					<h3 class="title">One morning, when Gregor Samsa woke from troubled dreams.</h3>
-					<div class="date">02 March, 2018</div>
-				</a>
 
        <!-- TERMINA CARGADO DINAMICO -->
 
@@ -421,6 +394,7 @@
 <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
 <script src="{{asset('projectjs/user.js')}}"></script>
+<script src="{{asset('projectjs/viaje.js')}}"></script>
 
 
 </body>
