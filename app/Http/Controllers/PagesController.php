@@ -14,4 +14,8 @@ class PagesController extends Controller
        return view('admin.main');
     }
 
+    public function detailTourPage(){
+       return view('pages.detailTour');
+    }
+
 }

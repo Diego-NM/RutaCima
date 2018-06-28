@@ -40,6 +40,7 @@ $("#con_crearUsuario").click(function(){
   var telephone = $("#con_telephone").val();
   var userName =  $("#con_email").val();
   var password = $("#con_password").val();
+  var rol = '3';
 
     if(name == ""){
       alert('Digite nombre');
@@ -88,10 +89,11 @@ $("#con_crearUsuario").click(function(){
                    'email':email,
                    'telephone':telephone,
                    'userName':userName,
-                   'password':password },
+                   'password':password,
+                   'rol':rol },
            url: 'createUser',
            success: function(data) {
-             if(data = 1){
+             if(data == "existe"){
                alert("El usuario que intenta ingresar ya existe!");
              }else{
                alert("Usuario Ingresado con éxito!");

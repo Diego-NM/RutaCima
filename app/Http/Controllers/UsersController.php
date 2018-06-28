@@ -28,43 +28,29 @@ class UsersController extends Controller
       return $response;
     }
 
-    public function validateNewUser(Request $request)
-    {
-      $firstName = $request['name'];
-      $firstLastName = $request['firstLastName'];
-      $secondLastName = $request['secondLastName'];
-      $idNumber = $request['idNumber'];
-      $age = $request['age'];
-      $email = $request['email'];
-      $telephone = $request['telephone'];
-      $userName = $request['userName'];
-      $password = $request['password'];
-      $rolID = '3';
-
-      $result= DB::select('select * from usuario where NumeroIdentificacion='.$idNumber);
-      $array = json_decode(json_encode($result), True);
-        if(!empty($array)){
-          return 1;
-        }else{
-          createUser();
-        }
-    }
 
     public function createUser(Request $request)
     {
-      $firstName = $request['name'];
-      $firstLastName = $request['firstLastName'];
-      $secondLastName = $request['secondLastName'];
-      $idNumber = $request['idNumber'];
-      $age = $request['age'];
-      $email = $request['email'];
-      $telephone = $request['telephone'];
-      $userName = $request['userName'];
-      $password = $request['password'];
-      $rolID = '3';
+        $firstName = $request['name'];
+        $firstLastName = $request['firstLastName'];
+        $secondLastName = $request['secondLastName'];
+        $idNumber = $request['idNumber'];
+        $age = $request['age'];
+        $email = $request['email'];
+        $telephone = $request['telephone'];
+        $userName = $request['userName'];
+        $password = $request['password'];
+        $rolID = $request['rol'];
 
-      DB::insert('insert into usuario (NombreCompleto,PrimerApellido,SegundoApellido,NumeroIdentificacion,Edad,CorreoElectronico,NumeroTelefonico,NombreUsuario,Contrasena,rol_ID) values (?,?,?,?,?,?,?,?,?,?)',  [$firstName, $firstLastName,$secondLastName,$idNumber,$age,$email,$telephone,$userName,$password,$rolID]);
-      return 0;
+        $result= DB::select('select * from usuario where NumeroIdentificacion='.$idNumber);
+        $array = json_decode(json_encode($result), True);
+          if(!empty($array)){
+            $response = "existe";
+          }else{
+            DB::insert('insert into usuario (NombreCompleto,PrimerApellido,SegundoApellido,NumeroIdentificacion,Edad,CorreoElectronico,NumeroTelefonico,NombreUsuario,Contrasena,rol_ID) values (?,?,?,?,?,?,?,?,?,?)',  [$firstName, $firstLastName,$secondLastName,$idNumber,$age,$email,$telephone,$userName,$password,$rolID]);
+            $response = "no existe";
+          }
+     return $response;
     }
 
     public function editUser($name, $email, $phone)

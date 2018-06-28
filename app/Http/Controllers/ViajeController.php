@@ -14,9 +14,9 @@ class ViajeController extends Controller
        $tourArray = json_decode(json_encode($result), True);
 
       //No lo recorro por que se que solo hay un registro, si fueran mas se hace con foreach()
-       $tour="<a href='single-blog.html' class='col-md-4 blog'>
+       $tour="<a href='/detailTour' class='col-md-4 blog'>
                <div class='image'>
-                 <img src='{{asset('images/blog-1.jpg')}}' alt=''>
+                 <img src='{{asset('images/chirripo.jpg')}}' alt=''>
                </div>
                <span></span>
                <h3 class='title'>".$tourArray[0]['Titulo']."</h3>
