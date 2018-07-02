@@ -10,10 +10,6 @@ class PagesController extends Controller
        return view('pages.main');
     }
 
-    public function indexAdmin(){
-       return view('admin.main');
-    }
-
     public function detailTourPage(){
        return view('pages.detailTour');
     }

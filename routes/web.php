@@ -13,7 +13,6 @@
 
 //PAGES CONTROLLER
 Route::get('/', 'PagesController@index');
-Route::get('/mainAdmin', 'PagesController@indexAdmin');
 Route::get('/detailTour', 'PagesController@detailTourPage');
 
 //USERS CONTROLLER
