@@ -3,7 +3,7 @@
 /*---------------------------------- */
 
 /**
-	Rize - Portfolio Template
+	Rize - Portfolio Template 
 	Author : Tavonline
 	Copyright 2018
 
@@ -21,7 +21,7 @@
     8. RESPOMSIVE
 
 
-/*------------------------ 1 BODY & CORE CSS ------------------------*/
+/*------------------------ 1 BODY & CORE CSS ------------------------*/	
 
 
 body{
@@ -77,23 +77,23 @@ p{
 }
 
 .padding_30{
-   padding: 30px 0;
+   padding: 30px 0; 
 }
 
 .padding_45{
-   padding: 45px 0;
+   padding: 45px 0; 
 }
 
 .padding_60{
-   padding: 60px 0;
+   padding: 60px 0; 
 }
 
 .padding_90{
-   padding: 90px 0;
+   padding: 90px 0; 
 }
 
 .padding_120{
-   padding: 120px 0;
+   padding: 120px 0; 
 }
 
 .bottom_15{
@@ -158,7 +158,7 @@ p{
 }
 
 
-/*------------------------ 2 HEADER & FULL MENU ------------------------*/
+/*------------------------ 2 HEADER & FULL MENU ------------------------*/    
 
  header{
     position: absolute;
@@ -325,11 +325,11 @@ header .logo{
 }
 
 
-/*------------------------ 3 HOME SECTION ------------------------*/
+/*------------------------ 3 HOME SECTION ------------------------*/	
 
 
 .home{
-	background: url(/images/main.jpg);
+	background: url(../images/home-bg.jpg);
 	background-size: cover;
 	width: 100%;
 	position: relative;
@@ -429,7 +429,7 @@ section{
 }
 
 .line{
-    height: 1px;
+    height: 1px;    
     opacity: .5;
     background: -moz-linear-gradient(45deg, rgba(252,43,0,1) 0%, rgba(89,61,213,1) 100%);
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(252,43,0,1)), color-stop(100%, rgba(89,61,213,1)));
@@ -511,7 +511,7 @@ section{
 }
 
 
-/*------------------------ 4 ABOUT SECTION ------------------------*/
+/*------------------------ 4 ABOUT SECTION ------------------------*/   
 
 .section-title{
     text-align: center;
@@ -520,9 +520,9 @@ section{
 }
 
 .section-title .title{
-   font-family: 'BebasNeueRegular';
-   font-weight: normal;
-   font-style: normal;
+   font-family: 'BebasNeueRegular'; 
+   font-weight: normal; 
+   font-style: normal; 
    font-size: 40px;
    position: relative;
    display: inline-block;
@@ -562,7 +562,7 @@ section{
 }
 
 
-/*------------------------ 5 WHAT WE DO SECTION ------------------------*/
+/*------------------------ 5 WHAT WE DO SECTION ------------------------*/   
 
 
 .gray-bg .section-title .title .number{
@@ -638,7 +638,7 @@ section{
 }
 
 
-/*------------------------ 6 BLOG SECTION ------------------------*/
+/*------------------------ 6 BLOG SECTION ------------------------*/   
 
 .blog {
     transform: translateY(5px);
@@ -686,9 +686,9 @@ section{
 /* Single Blog */
 
 .widget-title{
-   font-family: 'BebasNeueRegular';
-   font-weight: normal;
-   font-style: normal;
+   font-family: 'BebasNeueRegular'; 
+   font-weight: normal; 
+   font-style: normal; 
    font-size: 23px;
 }
 
@@ -752,7 +752,7 @@ section{
 }
 
 .blog-content h1.title{
-    font-size: 35px;
+    font-size: 35px; 
     font-weight: bold;
     line-height: 45px;
     letter-spacing: -1px;
@@ -769,7 +769,7 @@ section{
 
 
 
-/*------------------------ 7 CONTACT SECTION ------------------------*/
+/*------------------------ 7 CONTACT SECTION ------------------------*/   
 
 .contact .social a{
     color: #000;
@@ -823,7 +823,7 @@ footer p{
 
 
 
-/*------------------------ 8 RESPONSIVE ------------------------*/
+/*------------------------ 8 RESPONSIVE ------------------------*/ 
 
 @media (max-width: 1024px){
 
@@ -837,7 +837,7 @@ footer p{
 
      .home .home-content h1 {
         font-size: 70px;
-    }
+    }   
 
     .home .home-content p.top_30{
         margin-top: 15px;
@@ -956,7 +956,7 @@ footer p{
     }
 
     .blog-content blockquote {
-        font-size: 23px;
+        font-size: 23px;    
         padding: 30px;
     }
 
@@ -964,10 +964,50 @@ footer p{
         float: none;
         line-height: 40px;
         margin-right: 0;
-    }
+    }   
 
     .home .home-content {
         padding: 15px;
-    }
+    } 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
