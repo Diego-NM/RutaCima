@@ -42,8 +42,8 @@
 
 	<!-- HEADER -->
 	<header>
-        <!--<div class="logo">
-            <img src="{{asset('images/logo-w.png')}}" alt="">
+    <!--    <div class="logo">
+            <img src="{{asset('images/main.jpg')}}" alt="">
         </div>-->
         <div class="nav-icon">
 		  <span></span>
@@ -53,8 +53,8 @@
 	</header>
 	<!-- Fixed Header -->
 	<header class="fixed fixed-top">
-        <!--<div class="logo">
-            <img src="{{asset('images/logo.png')}}" alt="">
+      <!--  <div class="logo">
+            <img src="{{asset('images/main.jpg')}}" alt="">
         </div>-->
         <div class="nav-icon">
 		  <span></span>
