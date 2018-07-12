@@ -5,11 +5,15 @@ $("#con_ingresar").click(function(){
       var password = $("#con_passwordInicioSesion").val();
 
       if(email == ""){
-        alert('Digite correo');
+        $("#message").simpleAlert({
+          message: "Digite correo!"
+        });
        return false;
       }
       if(password == ""){
-          alert('Digite contraseña');
+        $("#message").simpleAlert({
+          message: "Digite contraseña!"
+        });
        return false;
       }
       $.ajax({
@@ -19,11 +23,15 @@ $("#con_ingresar").click(function(){
             url: 'validateUser',
             success: function(data) {
               if(data == 0){
-                alert("El usuario que intenta ingresar no existe!");
+                $("#message").simpleAlert({
+                  message: "El usuario que intenta ingresar no existe!"
+                });
                 $("#con_emailInicioSesion").val("");
                 $("#con_passwordInicioSesion").val("");
               }else{
-                alert("Usuario Loggeado con éxito!");
+                $("#message").simpleAlert({
+                  message: "Usuario Loggeado con éxito!"
+                });
                 clearLoginForm();
               }
             }
@@ -43,39 +51,57 @@ $("#con_crearUsuario").click(function(){
   var rol = '3';
 
     if(name == ""){
-      alert('Digite nombre');
+      $("#message").simpleAlert({
+        message: "Digite nombre!"
+      });
      return false;
     }
     if(firstLastName == ""){
-        alert('Digite primer apellido');
+      $("#message").simpleAlert({
+        message: "Digite primer apellido!"
+      });
      return false;
     }
      if(secondLastName == ""){
-       alert('Digite segundo apellido');
+       $("#message").simpleAlert({
+         message: "Digite segundo apellido!"
+       });
      return false;
      }
      if(idNumber == ""){
-       alert('Digite cedula');
+       $("#message").simpleAlert({
+         message: "Digite Identificación!"
+       });
      return false;
      }
      if(age == ""){
-        alert('Digite edad');
+       $("#message").simpleAlert({
+         message: "Seleccione Fecha de nacimiento!"
+       });
       return false;
      }
      if(email == ""){
-   alert('Digite correo Electronico');
+       $("#message").simpleAlert({
+         message: "Digite Correo Electrónico!"
+       });
      return false;
      }
      if(telephone == ""){
-        alert('Digite telefono');
+       $("#message").simpleAlert({
+         message: "Digite telefono!"
+       });
       return false;
      }
      if(userName == ""){
-        alert('Digite nombre de usuario');
+       $("#message").simpleAlert({
+         message: "Digite nombre de usuario!"
+       });
       return false;
      }
      if(password == ""){
-        alert('Digite contraseña');
+       $("#message").simpleAlert({
+         message: "Digite contraseña!"
+       });
       return false;
      }
 
@@ -94,9 +120,13 @@ $("#con_crearUsuario").click(function(){
            url: 'createUser',
            success: function(data) {
              if(data == "existe"){
-               alert("El usuario que intenta ingresar ya existe!");
+               $("#message").simpleAlert({
+                 message: "El usuario que intenta ingresar ya existe!"
+               });
              }else{
-               alert("Usuario Ingresado con éxito!");
+               $("#message").simpleAlert({
+                 message: "Usuario Ingresado con éxito!"
+               });
                clearLoginForm();
              }
            }

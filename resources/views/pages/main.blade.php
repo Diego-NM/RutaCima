@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="{{asset('css/reset.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/style.css')}}"/>
+  <link rel="stylesheet" href="{{asset('css/really-simple-jquery-dialog.css')}}"/>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -348,16 +349,16 @@
                     <div class="row">
                         <!--Name-->
                         <div class="col-md-6">
-                            <input id="con_name" name="con_name" class="form-inp requie" type="text" placeholder="Nombre">
+                            <input id="con_nameContact" name="con_nameContact" class="form-inp requie" type="text" placeholder="Nombre">
                         </div>
                         <!--Email-->
                         <div class="col-md-6">
-                            <input id="con_email" name="con_email" class="form-inp requie" type="text" placeholder="Correo Electronico">
+                            <input id="con_emailContact" name="con_emailContact" class="form-inp requie" type="text" placeholder="Correo Electronico">
                         </div>
                         <div class="col-md-12">
                             <!--Message-->
-                            <textarea name="con_message" id="con_message" class="requie" placeholder="En que le podemos ayudar?" rows="8"></textarea>
-                            <button id="con_submit" class="site-btn top_60 pull-right" type="submit">Enviar</button>
+                            <textarea name="con_messageContact" id="con_messageContact" class="requie" placeholder="En que le podemos ayudar?" rows="8"></textarea>
+                            <button id="con_sendMessage" class="site-btn top_60 pull-right" type="button">Enviar</button>
                         </div>
                     </div>
                 </form>
@@ -371,6 +372,7 @@
         <svg class="right-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
             <path d="M0 0 0 0 0 0 Z"></path>
         </svg>
+				<div id="message"></div>
 	</section>
 
 
@@ -395,6 +397,8 @@
 <script src="{{asset('js/main.js')}}"></script>
 <script src="{{asset('projectjs/user.js')}}"></script>
 <script src="{{asset('projectjs/viaje.js')}}"></script>
+<script src="{{asset('projectjs/contact.js')}}"></script>
+<script src="{{asset('js/really-simple-jquery-dialog.js')}}"></script>
 
 
 </body>

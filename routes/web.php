@@ -22,6 +22,7 @@ Route::get('createUser', 'UsersController@createUser');
 //VIAJE CONTROLLER
 Route::get('selectTour', 'ViajeController@selectAllTours');
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
+//CONTACT Controller
+Route::get('insertMessage', 'ContactsController@createMessage');
+
+Route::get('sendMail', 'ContactsController@sendEmailforContact');
