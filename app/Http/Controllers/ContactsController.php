@@ -21,7 +21,7 @@ class ContactsController extends Controller
 
             Mail::send('pages.mail',['name'=>$name, 'email' => $email, 'messageEmail' => $messageEmail],
             function($message){
-              $message->to('diegonez5@gmail.com')->subject('Consulta de Usuario');
+              $message->to('diegonez5@gmail.com')->subject('Consulta de Usuario');  // debe ser este rutaalacima@gmail.com
             });
 
             return 1;

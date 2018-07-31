@@ -70,13 +70,13 @@
 		<div class="right-inner">
 			<nav>
 				<ul>
-					<li id="loginPage"><a href="/login" class="active">Iniciar Sesión</a></li>
+					<!--<li id="loginPage"><a href="/login" class="active">Iniciar Sesión</a></li>-->
 					<li><a href="#about">Acerca de nosotros</a></li>
 					<li><a href="#whatwedo">Servicios</a></li>
 					<li><a href="#AventurasSection">Aventuras</a></li>
           <li><a href="#ToursSection">Tours</a></li>
 					<li><a href="#ProductosSection">Productos</a></li>
-					<li><a href="/validacionInicioSesion">Contratación</a></li>
+					<li><a href="/hiring">Contratación</a></li>
 					<li><a href="#contact">Contactenos</a></li>
 				</ul>
 			</nav>
@@ -118,7 +118,7 @@
 					<img src="{{asset('images/r1.png')}}" alt="">
 				</div>
 				<div class="col-lg-6 col-md-6 offset-lg-1 text">
-					<p>Somos una empresa de tours de aventura y senderismos por diferentes lugares de Costa Rica. Visitando lugares como Chirripó, Cerro Pelado, Pico Blanco, Corcovado, entre otros. Ofrecemos también otros servicios, como talleres</p>
+					<p>Somos una empresa de tours de aventura y senderismos por diferentes lugares de Costa Rica. Visitando lugares como Chirripó, Cerro Pelado, Pico Blanco, Corcovado, entre otros.</p>
 					<p>
           <br>
           Nuestro principal objetivo, es darle un avetura a la altura que usted merece.</p>
@@ -151,18 +151,10 @@
                     <h3 class="title top_30">PRODUCTOS</h3>
                     <p>Ofrecemos productos, totalmente propios y a un precio accesible</p>
                 </div>
-								<div class="col-md-4 col-sm-6  service text-center">
-                    <i class="icon-document" aria-hidden="true"></i>
-                    <h3 class="title top_30">Talleres</h3>
-                    <p>Ofrecemos talleres de pintura y de baile para su recreacion y acondicionamiento, a un precio accesible</p>
-                </div>
-								<div class="col-md-4 col-sm-6  service text-center">
-
-								</div>
                 <div class="col-md-4 col-sm-6  service text-center">
                     <i class="icon-pencil" aria-hidden="true"></i>
                     <h3 class="title top_30">SERVICIOS ADICIONALES</h3>
-                    <p>Si necesita un paramedico para el tour o servicio de almuerzos, etc, lo podemos cubrir por usted.</p>
+                    <p>Si necesita un paramedico, servicio de almuerzos, etc, lo podemos cubrir por usted.</p>
                 </div>
             </div>
 		</div>
@@ -345,7 +337,8 @@
 <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
 <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
-<script src="{{asset('projectjs/main.js')}}"></script>
+<script src="{{asset('projectjs/user.js')}}"></script>
+<script src="{{asset('projectjs/viaje.js')}}"></script>
 <script src="{{asset('projectjs/contact.js')}}"></script>
 <script src="{{asset('js/really-simple-jquery-dialog.js')}}"></script>
 

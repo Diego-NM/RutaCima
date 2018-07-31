@@ -29,10 +29,8 @@ $("#con_ingresar").click(function(){
                 $("#con_emailInicioSesion").val("");
                 $("#con_passwordInicioSesion").val("");
               }else{
-                $("#message").simpleAlert({
-                  message: "Usuario Loggeado con éxito!"
-                });
-                clearLoginForm();
+                    window.location.href = "/mainAfterLogin";
+                    clearLoginForm();
               }
             }
         });
@@ -133,28 +131,80 @@ $("#con_crearUsuario").click(function(){
        });
 });
 
+$("#con_enviarContraseña").click(function(){
+  var name = $("#con_nameReseteo").val();
+  var email = $("#con_CorreoReseteo").val();
+
+    if(name == ""){
+      $("#message").simpleAlert({
+        message: "Digite nombre!"
+      });
+     return false;
+    }
+    if(email == ""){
+      $("#message").simpleAlert({
+        message: "Digite primer apellido!"
+      });
+     return false;
+    }
+
+     $.ajax({
+           type: 'GET',
+           data: { 'name':name,
+                   'email':email },
+           url: 'resetPassword',
+           success: function(data) {
+             if(data == "No existe"){
+               $("#message").simpleAlert({
+                 message: "Este correo electronico no tiene una cuenta creada, registrese para crear una cuenta!"
+               });
+               clearForgotPasswordForm();
+             }else{
+               $("#message").simpleAlert({
+                 message: "Se ha enviado la contraseña al correo electronico ingresado!"
+               });
+               clearForgotPasswordForm();
+             }
+           }
+       });
+});
+
 $("#con_registrarse").click(function(){
   $("#loginTitle").text('Registrar Cuenta');
   $("#loginForm").hide();
   $("#registerForm").show();
+  $("#forgotPassword").hide();
   $("#con_registrarse").hide();
   $("#con_iniciarSesion").show();
   $("#con_ingresar").hide();
   $("#con_crearUsuario").show();
+  $("#con_ReseteoContrasena").hide()
+  $("#con_enviarContraseña").hide();
 });
 
 $("#con_iniciarSesion").click(function(){
   $("#loginTitle").text('Iniciar Sesión');
   $("#loginForm").show();
   $("#registerForm").hide();
+  $("#forgotPassword").hide();
   $("#con_registrarse").show();
   $("#con_iniciarSesion").hide();
   $("#con_ingresar").show();
   $("#con_crearUsuario").hide();
+  $("#con_ReseteoContrasena").show();
+});
+
+$("#con_ReseteoContrasena").click(function(){
+ $("#loginTitle").text('Recuperacíon de Contraseña');
+ $("#forgotPassword").show();
+ $("#con_enviarContraseña").show();
+ $("#loginForm").hide();
+ $("#con_ingresar").hide();
+ $("#registerForm").hide();
+ $("#con_ReseteoContrasena").hide();
 });
 
 var clearRegisterForm = function(){
-    $("#login").hide();
     $("#con_name").val("");
     $("#con_firstLastName").val("");
     $("#con_secondLastName").val("");
@@ -166,9 +216,13 @@ var clearRegisterForm = function(){
 }
 
 var clearLoginForm = function(){
-  $("#login").hide();
   $("#con_emailInicioSesion").val("");
   $("#con_passwordInicioSesion").val("");
+}
+
+var clearForgotPasswordForm = function(){
+  $("#con_nameReseteo").val("");
+  $("#con_CorreoReseteo").val("");
 }
 
 });
