@@ -169,39 +169,8 @@ $("#con_enviarContraseña").click(function(){
        });
 });
 
-$("#con_registrarse").click(function(){
-  $("#loginTitle").text('Registrar Cuenta');
-  $("#loginForm").hide();
-  $("#registerForm").show();
-  $("#forgotPassword").hide();
-  $("#con_registrarse").hide();
-  $("#con_iniciarSesion").show();
-  $("#con_ingresar").hide();
-  $("#con_crearUsuario").show();
-  $("#con_ReseteoContrasena").hide()
-  $("#con_enviarContraseña").hide();
-});
-
-$("#con_iniciarSesion").click(function(){
-  $("#loginTitle").text('Iniciar Sesión');
-  $("#loginForm").show();
-  $("#registerForm").hide();
-  $("#forgotPassword").hide();
-  $("#con_registrarse").show();
-  $("#con_iniciarSesion").hide();
-  $("#con_ingresar").show();
-  $("#con_crearUsuario").hide();
-  $("#con_ReseteoContrasena").show();
-});
-
-$("#con_ReseteoContrasena").click(function(){
- $("#loginTitle").text('Recuperacíon de Contraseña');
- $("#forgotPassword").show();
- $("#con_enviarContraseña").show();
- $("#loginForm").hide();
- $("#con_ingresar").hide();
- $("#registerForm").hide();
- $("#con_ReseteoContrasena").hide();
+$("#returnMainFromLogin").click(function(){
+  window.location.href = "/";
 });
 
 var clearRegisterForm = function(){

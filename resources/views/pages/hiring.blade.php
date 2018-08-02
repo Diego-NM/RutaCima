@@ -58,6 +58,18 @@
 			    outline: none;
 			}
 
+			.botonimagen{
+				width: 100px;
+				height: 100px;
+				border: 0;
+				margin: 4px 2px;
+				opacity: 1;
+				transition: 0.3s;
+				background-image:url('/images/boton-atras.png');
+				};
+
+				.botonimagen : hover {opacity: 0.6};
+
 	</style>
 
 
@@ -70,22 +82,31 @@
 		<div id="exTab1" class="container">
 			<div class="login">
 				<div class="container text-center">
+						<div class="row">
+								<div class="col-2">
+										<button id="returnMainFromHiring" class="botonimagen" data-toggle="tooltip" title="Regresar"></button>
+								</div>
+								<div class="col-8">
+									<h2>Contratación</h2>
+									<p>Escoga el tipo de servicio que desea contratar</p>
+								</div>
+								<div class="col-2"></div>
+						</div>
 
-					<h2>Contratación</h2>
-					<p>Escoga el tipo de servicio que desea contratar</p>
+
 
 					<div class="col-md-8 offset-md-2">
          </br>
 			 			 <ul  class="nav nav-pills" >
 									 <li class="active">
-			 							 <a   href="#tour" data-toggle="tab">Tours</a>
+			 							 <a   href="#tour" style="font-weight: bold; font-size:large;" data-toggle="tab">Tours</a>
 			 						 </li>
 									 <li>
-			 							 <a   href="#taller" data-toggle="tab">Taller</a>
+			 							 <a   href="#taller" style="font-weight: bold; font-size:large;" data-toggle="tab">Taller</a>
 			 						 </li>
-			 						 <li><a href="#programa" data-toggle="tab">Programas</a>
+			 						 <li><a href="#programa" style="font-weight: bold; font-size:large;" data-toggle="tab">Programas</a>
 			 						 </li>
-			 						 <li><a href="#other" data-toggle="tab">Otros Servicios</a>
+			 						 <li><a href="#other" style="font-weight: bold; font-size:large;" data-toggle="tab">Otros Servicios</a>
 			 						 </li>
 			 			 </ul>
              <br/>
@@ -114,7 +135,7 @@
 																				 <div class="col-md-6">
 																					 <div style=' width: 200px;
 																						border-radius: 3px;'>
-																					 <input class="form-control" type="number" id="numeroPersonasContratacion" name="numeroPersonasContratacion" placeholder="Min: 1, max: 100" min="1" max="100" />
+																					 <input required class="form-control" type="number" id="numeroPersonasContratacion" name="numeroPersonasContratacion" placeholder="Min: 1, max: 100" min="1" max="100" />
 																					 </div>
 																				 </div>
 																		 </div>
@@ -129,7 +150,7 @@
 																					<div style=' width: 200px;
 																					 border-radius: 3px;'>
 																					 <div class='input-group date' id='DivfechaContratacion'>
-																							 <input id='fechaContratacion' type='text' class="form-control" />
+																							 <input required id='fechaContratacion' type='text' class="form-control" />
 																							 <span class="input-group-addon">
 																									 <span class="glyphicon glyphicon-calendar"></span>
 																							 </span>
@@ -163,24 +184,24 @@
 																			 </div>
 																			 <div class="col-md-3">
 																				 <label>Comida
-																				 <input type="checkbox"  id="comidachkTour" value="Comida">
+																				 <input   type="checkbox"  id="comidachkTour" value="Comida">
 																				 <span class="checkmark"></span>
 																				 </label>
 																				 <label>Estadia
-																					 <input type="checkbox"  id="estadischkTour" value="Estadia">
+																					 <input  type="checkbox"  id="estadischkTour" value="Estadia">
 																					 <span class="checkmark"></span>
 																				 </label>
 																				 <label>Paramédico
-																					<input type="checkbox" id="paramedicochkTour" value="Paramédico">
+																					<input  type="checkbox" id="paramedicochkTour" value="Paramédico">
 																					<span class="checkmark"></span>
 																				</label>
 																				 <label>Otro
-																					 <input type="checkbox" id="otrochkTour">
+																					 <input   type="checkbox" id="otrochkTour">
 																					 <span class="checkmark"></span>
 																				 </label>
 																			 </div>
 																			 <div class="col-md-3">
-																					<input id="tourOtroExtra" class="form-control" type="text" style="display:none;"/>
+																					<input  id="tourOtroExtra" class="form-control" type="text" style="display:none;"/>
 																			 </div>
 																		</div>
 
@@ -209,7 +230,7 @@
 																					 </div>
 																				 </div>
 																				 <div class="col-md-3">
-																						 <input id="tallerOtro" class="form-control" type="text" style="display:none; height: 31px;"/>
+																						 <input  id="tallerOtro" class="form-control" type="text" style="display:none; height: 31px;"/>
 																				 </div>
 																			</div>
 
@@ -222,7 +243,7 @@
 																				 <div class="col-md-6">
 																					 <div style=' width: 200px;
 																						border-radius: 3px;'>
-																					 <input class="form-control" type="number" id="numPersonasTaller" name="numPersonasTaller" placeholder="Min: 1, max: 100" min="1" max="100" />
+																					 <input required class="form-control" type="number" id="numPersonasTaller" name="numPersonasTaller" placeholder="Min: 1, max: 100" min="1" max="100" />
 																					 </div>
 																				 </div>
 																		 </div>
@@ -237,7 +258,7 @@
 																					<div style=' width: 200px;
 																					 border-radius: 3px;'>
 																					 <div class='input-group date' id='DivfechaContratacionTaller'>
-																							 <input id='fechaTaller' type='text' class="form-control" />
+																							 <input required id='fechaTaller' type='text' class="form-control" />
 																							 <span class="input-group-addon">
 																									 <span class="glyphicon glyphicon-calendar"></span>
 																							 </span>
@@ -325,7 +346,7 @@
 																							 <div class="col-md-6">
 																								 <div style=' width: 200px;
 																							    border-radius: 3px;'>
-																								 <input class="form-control" type="number" id="numPrograma" name="numPrograma" placeholder="Min: 1, max: 100" min="1" max="100" />
+																								 <input required class="form-control" type="number" id="numPrograma" name="numPrograma" placeholder="Min: 1, max: 100" min="1" max="100" />
 																							   </div>
 																							 </div>
 						 															 </div>
@@ -339,7 +360,7 @@
  		 																					<div style=' width: 200px;
  		 																					 border-radius: 3px;'>
  		 																					 <div class='input-group date' id='DivfechaContratacionPrograma'>
- 		 																							 <input id='fechaPrograma' type='text' class="form-control" />
+ 		 																							 <input required id='fechaPrograma' type='text' class="form-control" />
  		 																							 <span class="input-group-addon">
  		 																									 <span class="glyphicon glyphicon-calendar"></span>
  		 																							 </span>
@@ -436,7 +457,7 @@
 																			<div style=' width: 200px;
 																			 border-radius: 3px;'>
 																			 <div class='input-group date' id='DivfechaContratacionOtro'>
-																					 <input id='fechaOtro' type='text' class="form-control" />
+																					 <input required id='fechaOtro' type='text' class="form-control" />
 																					 <span class="input-group-addon">
 																							 <span class="glyphicon glyphicon-calendar"></span>
 																					 </span>
@@ -453,7 +474,7 @@
 																		</div>
 																		<div class="col-md-6">
 																			<div class="select-style" style="width:200px;">
-																				<select id="tipoEnventoOtro">
+																				<select required id="tipoEnventoOtro">
 																					<option>Seleccione</option>
 																					<option value="1">Familiar</option>
 																					<option value="2">Empresarial</option>
@@ -521,11 +542,8 @@
 <script src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>
 <script src="{{asset('js/locales/bootstrap-datetimepicker.fr.js')}}"></script>
 
-<footer style='position:absolute;
-   bottom:0;
-   width:100%;
-	 height:25%'>
-	<div class="container text-center" >
+<footer style="height:100px; position:absolute; bottom:0; width:100%; padding:0px">
+	<div class="container text-center">
 			<div class="social top_30">
 							<a href="https://www.facebook.com/pg/RutaLaCima/"><i class="fab fa-facebook"></i>  </a>
 					</div>

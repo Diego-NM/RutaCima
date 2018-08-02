@@ -9,12 +9,17 @@ use Illuminate\Support\Facades\DB; //********IMPORTANTE DEBE ESTAR EN LOS CONTRO
 class RatingsController extends Controller
 {
   public function insertRating(Request $request)
-     {
-        $value  =  $request['value'];
-        $idTour =  $request['idTour'];
+     {  $response = "";
         $idUsuario =  $request->session()->get('userID');
-        $fecha =  date("d/m/Y");;
-        DB::insert('insert into calificacion (usuario_ID,viaje_ID,FechaHora,Valor) values (?,?,?,?)',  [$idUsuario,$idTour,$fecha,$value]);
-        $response = 1;
+        if($idUsuario === NULL){
+            $response = "error";
+          }else{
+            $value  =  $request['value'];
+            $idTour =  $request['idTour'];
+            $fecha =  date("Y/m/d");;
+            DB::insert('insert into calificacion (usuario_ID,viaje_ID,FechaHora,Valor) values (?,?,?,?)',  [$idUsuario,$idTour,$fecha,$value]);
+            $response = "insertado";
+          }
+         return $response;
       }
 }

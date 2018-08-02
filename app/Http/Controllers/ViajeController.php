@@ -15,23 +15,25 @@ class ViajeController extends Controller
        $tour = "";
        if(isset($tourArray[1])){
           foreach($tourArray as $data){
+             $time = strtotime($data['FechaHora_Salida']);
              $tour.="<a href='/detailTour/".$data['ID_Viaje']."' class='col-md-4 blog'>
                      <div class='image'>
                        <img src='{{asset('images/chirripo.jpg')}}' alt=''>
                      </div>
                      <span></span>
                      <h3 class='title'>".$data['Titulo']."</h3>
-                     <div class='date'>Fecha de Salida: ".$data['FechaHora_Salida']."</div>
+                     <div class='date'>Fecha de Salida: ".date('d/m/y',$time)."</div>
                    </a>";
             }
        }else{
+              $time = strtotime($data[0]['FechaHora_Salida']);
               $tour="<a href='/detailTour/".$data['ID_Viaje']."' class='col-md-4 blog'>
                       <div class='image'>
                         <img src='{{asset('images/chirripo.jpg')}}' alt=''>
                       </div>
                       <span></span>
                       <h3 class='title'>".$tourArray[0]['Titulo']."</h3>
-                      <div class='date'>Fecha de Salida: ".$tourArray[0]['FechaHora_Salida']."</div>
+                      <div class='date'>Fecha de Salida: ".date('d/m/y',$time)."</div>
                     </a>";
        }
 

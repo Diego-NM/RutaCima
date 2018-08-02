@@ -296,6 +296,10 @@ $(document).ready(function(){
       });
   });
 
+  $("#returnMainFromHiring").click(function(){
+    window.location.href = "/mainAfterLogin";
+  });
+
 
 
   var clearTourHiring = function(){

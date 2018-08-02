@@ -1,23 +1,3 @@
-<?php
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\DB; //********IMPORTANTE DEBE ESTAR EN LOS CONTROLADORES QUE USEA LA SENTENCIA DB::INSERT,DB::UPDATE,DB::SELECT,DB::DELETE
-
-class RatingsController extends Controller
-{
-	public function insertRating(Request $request)
-		 {
-				$value  =  $request['value'];
-				$idTour =  $request['idTour'];
-				$idUsuario =  $request->session()->get('userID');
-				$fecha =  date("d/m/Y");;
-				DB::insert('insert into calificacion (usuario_ID,viaje_ID,FechaHora,Valor) values (?,?,?,?)',  [$idUsuario,$idTour,$fecha,$value]);
-				$response = 1;
-			}
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,6 +88,7 @@ class RatingsController extends Controller
 		<div class="container">
 			<button id="returnMainFromTourDetail" class="botonimagen" data-toggle="tooltip" title="Regresar"></button>
 			<input id="idTour" style="display:none;" type="text" name="idTour" value="@foreach($tour as $item){{ $item['ID_Viaje'] }}@endforeach">
+			<input id="priceSelectedTour" style="display:none;" type="text" name="priceSelectedTour" value="@foreach($tour as $item){{ $item['Costo'] }}@endforeach">
 			<div class="row">
 				<div class="col-lg-9 col-md-8">
 					<div class="blog-content">
@@ -147,11 +128,15 @@ class RatingsController extends Controller
 		                    <div class="row">
 
 		                        <div class="col-md-6">
-		                            <input id="CantidadPersonasReservacion" name="CantidadPersonasReservacion" class="form-inp requie" type="number" placeholder="Cantidad de personas">
+															  <h3>Cantidad de personas</h3>
+																<br/>
+		                            <input style="font-size:large;" id="CantidadPersonasReservacion" min="1" max="@foreach($tour as $item){{ $item['Cupo'] }}@endforeach" name="CantidadPersonasReservacion" class="form-inp requie" type="number" required>
 		                        </div>
 
 		                        <div class="col-md-6">
-		                            <input id="CostoTotalReservacion" min="1" max="100" name="CostoTotalReservacion" class="form-inp requie" type="text" placeholder="Costo" disabled>
+															  <h3>Costo total en colones</h3>
+																<br/>
+		                            <input style="font-size:large;" id="CostoTotalReservacion"  name="CostoTotalReservacion" class="form-inp requie" type="text"  disabled required>
 		                        </div>
 		                        <div class="col-md-12">
 		                            <button id="reservar" class="site-btn top_60" type="button">Reservar</button>
@@ -166,20 +151,20 @@ class RatingsController extends Controller
 					<div class="categories top_45">
 						<h2 class="widget-title">Califique del Tour</h2>
 						<br/>
-            <form>
-						  <p class="clasificacion">
-						    <input id="5estrella" type="radio" name="estrellas" value="5"><!--
-						    --><label for="5estrella" style="font-size:50px">★</label><!--
-						    --><input id="4estrella" type="radio" name="estrellas" value="4"><!--
-						    --><label for="4estrella" style="font-size:50px">★</label><!--
-						    --><input id="3estrella" type="radio" name="estrellas" value="3"><!--
-						    --><label for="3estrella" style="font-size:50px">★</label><!--
-						    --><input id="2estrella" type="radio" name="estrellas" value="2"><!--
-						    --><label for="2estrella" style="font-size:50px">★</label><!--
-						    --><input id="1estrella" type="radio" name="estrellas" value="1"><!--
-						    --><label for="1estrella" style="font-size:50px">★</label>
-						  </p>
-           </form>
+		            <form action="">
+								  <p class="clasificacion">
+								    <input id="5estrella" type="radio" name="estrellas" value="5"><!--
+								    --><label for="5estrella" style="font-size:50px">★</label><!--
+								    --><input id="4estrella" type="radio" name="estrellas" value="4"><!--
+								    --><label for="4estrella" style="font-size:50px">★</label><!--
+								    --><input id="3estrella" type="radio" name="estrellas" value="3"><!--
+								    --><label for="3estrella" style="font-size:50px">★</label><!--
+								    --><input id="2estrella" type="radio" name="estrellas" value="2"><!--
+								    --><label for="2estrella" style="font-size:50px">★</label><!--
+								    --><input id="1estrella" type="radio" name="estrellas" value="1"><!--
+								    --><label for="1estrella" style="font-size:50px">★</label>
+								  </p>
+		           </form>
 						<br/>
 						<br/>
 					</div>
@@ -241,46 +226,8 @@ class RatingsController extends Controller
 <script src="{{asset('js/main.js')}}"></script>
 <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
 <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
-<script>
-$(document).ready(function(){
-        $.ajax({
-              type: 'GET',
-              data: {},
-              url: 'selectTour',
-              success: function(data) {
-                $("#toursDiv").append(data);
-                return false;
-              }
-          });
-
-        $("#returnMainFromTourDetail").click(function(){
-          window.location.href = "/";
-        });
-
-       $('input:radio[name=estrellas]').change(function(){
-         var value  = 0;
-         var baseURL = $("#baseURL").val();
-         if($("#1estrella").prop("checked") == true && $("#2estrella").prop("checked") == false && $("#3estrella").prop("checked") == false && $("#4estrella").prop("checked") == false && $("#5estrella").prop("checked") == false){
-          value = 1;
-         }
-         if($("#1estrella").prop("checked") == false && $("#2estrella").prop("checked") == true && $("#3estrella").prop("checked") == false && $("#4estrella").prop("checked") == false && $("#5estrella").prop("checked") == false){
-          value = 2;
-         }
-         if($("#1estrella").prop("checked") == false && $("#2estrella").prop("checked") == false && $("#3estrella").prop("checked") == true && $("#4estrella").prop("checked") == false && $("#5estrella").prop("checked") == false){
-          value = 3;
-         }
-         if($("#1estrella").prop("checked") == false && $("#2estrella").prop("checked") == false && $("#3estrella").prop("checked") == false && $("#4estrella").prop("checked") == true && $("#5estrella").prop("checked") == false){
-          value = 4;
-         }
-         if($("#1estrella").prop("checked") == false && $("#2estrella").prop("checked") == false && $("#3estrella").prop("checked") == false && $("#4estrella").prop("checked") == false && $("#5estrella").prop("checked") == true){
-          value = 5;
-         }
-         var idTour =  $("#idTour").val();
-
-       });
-
-});
-</script>
+<script src="{{asset('projectjs/viaje.js')}}"></script>
+<script src="{{asset('projectjs/booking.js')}}"></script>
 <script src="{{asset('js/really-simple-jquery-dialog.js')}}"></script>
 
 

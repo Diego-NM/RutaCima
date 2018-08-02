@@ -22,7 +22,18 @@
 	   <!-- Font icons -->
     <link rel="stylesheet" href="{{asset('icon-fonts/fontawesome-5.0.6/css/fontawesome-all.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('icon-fonts/etlinefont/style.css')}}"/>
-
+		<style type="text/css" media="screen">
+			a {
+				  color:black;
+				  font-size:30px;
+				  padding:8px 12px;
+				  border-radius:3px;
+				  -moz-border-radius:3px;
+				  -webkit-border-radius:3px;
+				  text-decoration:none;
+				  display: block; /* Added */
+				}
+		</style>
 
 
 </head>
@@ -40,14 +51,8 @@
                           <br/>
                           <br/>
                           <br/>
-                          <a href="/" style="font-weight:bold; background-color:'#F0AD4E'; width:30%; font-size:large; color: black;
-										 		 padding: 1em 1.5em;
-										 		 text-decoration: none;
-										 		 text-transform: uppercase;">Regresar</a>
-													<a href="/login" style="font-weight:bold; background-color:'#5CB85C'; width:30%; font-size:large; color: black;
-										 		 padding: 1em 1.5em;
-										 		 text-decoration: none;
-										 		 text-transform: uppercase;">Continuar</a>
+                          <a href="/">Regresar</a>
+													<a href="/login">Continuar</a>
                        </div>
                     </div>
               </form>

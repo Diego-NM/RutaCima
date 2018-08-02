@@ -42,3 +42,7 @@ Route::get('insertHiring', 'HiringController@createHiring');
 
 //RATINGS CONTROLLER
 Route::get('insertRating', 'RatingsController@insertRating');
+
+//BOOKINGS CONTROLLER
+Route::get('insertBooking', 'BookingsController@insertBooking');
+Route::get('calculatePrice', 'BookingsController@calculatePrice');

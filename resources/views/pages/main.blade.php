@@ -87,9 +87,9 @@
 	</div>
 
 	<!-- HOME -->
-	<section id="home" class="home">
+	<section id="home" class="home" >
 		<div class="home-content">
-            <h1>Somos <span class="element" data-text1="aventuras" data-text2="nuevas experiencias" data-text3="su opción"  data-loop="true" data-backdelay="3000"></span></h1>
+            <h1> <span class="element" data-text1="Nuestro destino" data-text2="No solo es el viaje" data-text3="También es la aventura" data-text3="Escojanos!"   data-loop="true" data-backdelay="3000"></span></h1>
 				<p class="top_30">Excelentes Servicios.<br> Viajes nacionales e internacionales. </p>
 				    <div class="social top_30">
 		            <a href="https://www.facebook.com/pg/RutaLaCima/"><i class="fab fa-facebook"></i>  </a>
@@ -180,25 +180,11 @@
 		<div class="container bottom_60">
 			<div class="section-title bottom_15">
 				<h2 class="title">AVENTURAS<span class="number"></span></h2>
-	           <!-- <div class="portfolio_filter">
-	                <ul>
-	                    <li data-filter=".web-design">Web Design</li>
-	                    <li data-filter=".aplication">Applications</li>
-	                    <li data-filter=".development">Development</li>
-	                    <li class="select-cat" data-filter="*">All Works</li>
-	                </ul>
-	            </div>-->
 			</div>
         <!--Portfolio Items-->
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="isotope_items row">
-                    <!-- Item -->
-                  <!--  <a href="https://www.youtube.com/watch?v=M-M3rdL_WLQ" class="popup-youtube single_item link development col-md-4 col-sm-6">
-                        <i class="fa fa-play" aria-hidden="true"></i>
-                        <img src="{{asset('images/work1.jpg')}}" alt="">
-                    </a>-->
-                    <!-- Item -->
                     <a href="{{asset('images/work1.jpg')}}" class="single_item link aplication col-md-4 col-sm-6">
                         <img src="{{asset('images/work1.jpg')}}" alt="">
                     </a>
@@ -214,9 +200,21 @@
                         <img src="{{asset('images/work4.jpg')}}" alt="">
                     </a>
                     <!-- Item -->
-                    <a href="{{asset('images/work6.jpg')}}" class="single_item link aplication col-md-4 col-sm-6">
+                    <a href="{{asset('images/work5.jpg')}}" class="single_item link aplication col-md-4 col-sm-6">
                         <img src="{{asset('images/work6.jpg')}}" alt="">
                     </a>
+										<a href="{{asset('images/work6.jpg')}}" class="single_item link aplication col-md-4 col-sm-6">
+												<img src="{{asset('images/work5.jpg')}}" alt="">
+										</a>
+										<a href="{{asset('images/work7.jpg')}}" class="single_item link aplication col-md-4 col-sm-6">
+												<img src="{{asset('images/work7.jpg')}}" alt="">
+										</a>
+										<a href="{{asset('images/work8.jpg')}}" class="single_item link aplication col-md-4 col-sm-6">
+												<img src="{{asset('images/work8.jpg')}}" alt="">
+										</a>
+										<a href="{{asset('images/work9.jpg')}}" class="single_item link aplication col-md-4 col-sm-6">
+												<img src="{{asset('images/work9.jpg')}}" alt="">
+										</a>
                 </div>
             </div>
         </div>

@@ -13,9 +13,8 @@ $(document).ready(function(){
           window.location.href = "/";
         });
 
-       $('input:radio[name=estrellas]').change(function(){
+        $('input:radio[name=estrellas]').change(function(){
          var value  = 0;
-         var baseURL = $("#baseURL").val();
          if($("#1estrella").prop("checked") == true && $("#2estrella").prop("checked") == false && $("#3estrella").prop("checked") == false && $("#4estrella").prop("checked") == false && $("#5estrella").prop("checked") == false){
           value = 1;
          }
@@ -32,16 +31,28 @@ $(document).ready(function(){
           value = 5;
          }
          var idTour =  $("#idTour").val();
-        alert(baseURL);
          $.ajax({
                type: 'GET',
-               data: {},
-               url: baseURL + 'selectTour',
+               data: {
+                 "idTour": idTour,
+                 "value":value},
+               url:  '/insertRating',
                success: function(data) {
-                 alert(data);
-                 $("#message").simpleAlert({
-                   message: "Calificacion Guardada con exito!"
-                 });
+                 if(data == "error"){
+                   $("#message").simpleAlert({
+                     message: "Debes iniciar sesión para calificar!"
+                   });
+                   $("#1estrella").prop("checked", false);
+                   $("#2estrella").prop("checked", false);
+                   $("#3estrella").prop("checked", false);
+                   $("#4estrella").prop("checked", false);
+                   $("#5estrella").prop("checked", false);
+                   return false;
+                 }else{
+                   $("#message").simpleAlert({
+                     message: "Calificacion Guardada con exito!"
+                   });
+                 }
                  return false;
                }
            });

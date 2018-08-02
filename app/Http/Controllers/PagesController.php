@@ -27,8 +27,12 @@ class PagesController extends Controller
     public function detailTourPage($id){
       $result= DB::select("select * from viaje where ID_Viaje ='".$id."' ");
       $tour = json_decode(json_encode($result), True);
+      $dateLeaving = strtotime($tour[0]['FechaHora_Salida']);
+      $dateComming = strtotime($tour[0]['FechaHora_Regreso']);
       $data = array (
-        'tour' => $tour
+        'tour' => $tour,
+        'fechaSalida'=>date('d/m/y H:i:s',$dateLeaving),
+        'fechaLlegada'=>date('d/m/y H:i:s',$dateComming),
       );
        return view('pages.detailTour')->with($data);
     }
