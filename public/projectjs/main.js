@@ -4,7 +4,12 @@ $(document).ready(function(){
             data: {},
             url: 'selectTour',
             success: function(data) {
-              $("#toursDiv").append(data);
+              if(data == "VACIO"){
+                return false;
+              }else{
+                $("#toursDiv").append(data);
+              }
+
             }
         });
 
@@ -13,7 +18,12 @@ $(document).ready(function(){
               data: {},
               url: 'selectProducto',
               success: function(data) {
-                $("#ProductsDiv").append(data);
+                if(data == "VACIO"){
+                  return false;
+                }else{
+                  $("#ProductsDiv").append(data);
+                }
+
               }
           });
 });

@@ -13,40 +13,42 @@ class ViajeController extends Controller
        $result= DB::select("select * from viaje");
        $tourArray = json_decode(json_encode($result), True);
        $tour = "";
-       if(isset($tourArray[1])){
-          foreach($tourArray as $data){
-             $time = strtotime($data['FechaHora_Salida']);
-             $tour.="<a href='/detailTour/".$data['ID_Viaje']."' class='col-md-4 blog'>
-                     <div class='image'>
-                       <img src='{{asset('images/chirripo.jpg')}}' alt=''>
-                     </div>
-                     <span></span>
-                     <h3 class='title'>".$data['Titulo']."</h3>
-                     <div class='date'>Fecha de Salida: ".date('d/m/y',$time)."</div>
-                   </a>";
-            }
-       }else{
-              $time = strtotime($data[0]['FechaHora_Salida']);
-              $tour="<a href='/detailTour/".$data['ID_Viaje']."' class='col-md-4 blog'>
-                      <div class='image'>
-                        <img src='{{asset('images/chirripo.jpg')}}' alt=''>
-                      </div>
-                      <span></span>
-                      <h3 class='title'>".$tourArray[0]['Titulo']."</h3>
-                      <div class='date'>Fecha de Salida: ".date('d/m/y',$time)."</div>
-                    </a>";
-       }
-
-
-
-        return $tour;
+         if(!empty($tourArray)){
+                 if(isset($tourArray[1])){
+                    foreach($tourArray as $data){//" ".$data['Ruta_Imagen' "
+                       $time = strtotime($data['FechaHora_Salida']);
+                       $tour.="<a href='/detailTour/".$data['ID_Viaje']."' class='col-md-4 blog'>
+                               <div class='image'>
+                                 <img src='http://localhost/Admin-RC/public/images/".$data['Ruta_Imagen']."' alt'' style='width: 250px;height: 250px;'>
+                               </div>
+                               <span></span>
+                               <h2 class='title'>".$data['Titulo']."</h2>
+                               <div class='date' style='font-size: large;'>Fecha de Salida: ".date('d/m/y',$time)."</div>
+                             </a>";
+                      }
+                 }else{//src={{url('images/'.$array['array'][0]['Ruta_Imagen'])}}
+                        $time = strtotime($tourArray[0]['FechaHora_Salida']);
+                        $tour="<a href='/detailTour/".$tourArray[0]['ID_Viaje']."' class='col-md-4 blog'>
+                                <div class='image'>
+                                   <img src='http://localhost/Admin-RC/public/images/".$tourArray[0]['Ruta_Imagen']."' alt'' style='width: 250px;height: 250px;'>
+                                </div>
+                                <span></span>
+                                <h2 class='title'>".$tourArray[0]['Titulo']."</h2>
+                                <div class='date' style='font-size: large;'>Fecha de Salida: ".date('d/m/y',$time)."</div>
+                              </a>";
+                 }
+          return $tour;
+         }else{
+          return "VACIO";
+         }
     }
+
 
     public function selectAllToursForHire()
     {
        $result= DB::select("select * from viaje");
        $tourArray = json_decode(json_encode($result), True);
-
+       $tour= "";
       if(isset($tourArray[1])){
          foreach($tourArray as $data){
            $tour.="<option value='".$data['Titulo']."'>".$data['Titulo']."</option>";

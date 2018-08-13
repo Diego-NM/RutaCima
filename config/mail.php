@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'diegonez5@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'rutaalacima@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Ruta a la Cima'),
     ],
 
     /*
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME', 'diegonez5@gmail.com'),
+    'username' => env('MAIL_USERNAME', 'servicios.ruta.cima@gmail.com'),
 
-    'password' => env('MAIL_PASSWORD', 'helechos1,5'),
+    'password' => env('MAIL_PASSWORD', 'Servicios123'),
 
     /*
     |--------------------------------------------------------------------------

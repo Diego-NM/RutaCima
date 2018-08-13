@@ -17,10 +17,10 @@ class HiringController extends Controller
       $tipoEvento = $request['tipoEvento'];
       $descripcion = $request['extra'];
       $userID = $request->session()->get('userID');
-      $estado = 1;
+      $estado = 5;
       $fechaTramite = date("d/m/Y");
       $costoTotal = 0;
-        DB::insert('insert into contratacion (usuario_ID,estadpRC_ID,tipoEvento_ID,tipoServicioID,Descripcion,FechaTramite,FechaServicio,Costo_Total)
+        DB::insert('insert into contratacion (usuario_ID,estado_ID,tipoEvento_ID,tipoServicioID,Descripcion,FechaTramite,FechaServicio,Costo_Total)
         values (?,?,?,?,?,?,?,?)',[$userID,$estado,$tipoEvento,1,$contratacion.", ".$descripcion,$fechaTramite,$fechaEvento,$costoTotal]);
         $response = 1;
 

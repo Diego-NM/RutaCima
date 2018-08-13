@@ -10,6 +10,7 @@
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/reset.css')}}"/>
+	<!--<link rel="stylesheet" href="{{asset('css/loader.css')}}"/>-->
 	<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/style.css')}}"/>
   <link rel="stylesheet" href="{{asset('css/really-simple-jquery-dialog.css')}}"/>
@@ -78,7 +79,8 @@
 					<li><a href="#ProductosSection">Productos</a></li>
 					<li><a href="/hiring">Contratación</a></li>
 					<li><a href="#contact">Contactenos</a></li>
-					<li><a href="#">Cerrar Sesión</a></li>
+					<li><a href="/restorePasswordBlade">Cambiar Contraseña</a></li>
+					<li><a href="/">Cerrar Sesión</a></li>
 				</ul>
 			</nav>
 			<div class="right-copyright">
@@ -204,7 +206,7 @@
 												<img src="{{asset('images/work7.jpg')}}" alt="">
 										</a>
 										<a href="{{asset('images/work8.jpg')}}" class="single_item link aplication col-md-4 col-sm-6">
-												<img src="{{asset('images/work8.jpg')}}" alt="">
+												<img src="{{asset('images/work8.jpg')}}" alt="" style="height: 270px;">
 										</a>
 										<a href="{{asset('images/work9.jpg')}}" class="single_item link aplication col-md-4 col-sm-6">
 												<img src="{{asset('images/work9.jpg')}}" alt="">
@@ -307,14 +309,18 @@
 			</div>
 		</div>
 
-    <!-- bottom shape -->
-		<svg class="left-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
-            <path d="M0 0 0 0 0 0 Z"></path>
-        </svg>
-        <svg class="right-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
-            <path d="M0 0 0 0 0 0 Z"></path>
-        </svg>
-				<div id="message"></div>
+
+		    <!-- bottom shape -->
+				<svg class="left-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+		            <path d="M0 0 0 0 0 0 Z"></path>
+		        </svg>
+		        <svg class="right-svg" width="50%" height="80" viewBox="0 0 100 102" preserveAspectRatio="none">
+		            <path d="M0 0 0 0 0 0 Z"></path>
+		        </svg>
+						<div id="message"></div>
+
+
+
 	</section>
 
 
@@ -337,8 +343,7 @@
 <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
 <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
-<script src="{{asset('projectjs/user.js')}}"></script>
-<script src="{{asset('projectjs/viaje.js')}}"></script>
+<script src="{{asset('projectjs/main.js')}}"></script>
 <script src="{{asset('projectjs/contact.js')}}"></script>
 <script src="{{asset('js/really-simple-jquery-dialog.js')}}"></script>
 

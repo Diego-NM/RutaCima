@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="{{asset('css/reset.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/style.css')}}"/>
+	<!--<link rel="stylesheet" href="{{asset('css/loader.css')}}"/>-->
   <link rel="stylesheet" href="{{asset('css/really-simple-jquery-dialog.css')}}"/>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -210,7 +211,7 @@
 												<img src="{{asset('images/work7.jpg')}}" alt="">
 										</a>
 										<a href="{{asset('images/work8.jpg')}}" class="single_item link aplication col-md-4 col-sm-6">
-												<img src="{{asset('images/work8.jpg')}}" alt="">
+												<img src="{{asset('images/work8.jpg')}}" alt="" style="height: 270px;">
 										</a>
 										<a href="{{asset('images/work9.jpg')}}" class="single_item link aplication col-md-4 col-sm-6">
 												<img src="{{asset('images/work9.jpg')}}" alt="">
@@ -297,15 +298,15 @@
                     <div class="row">
                         <!--Name-->
                         <div class="col-md-6">
-                            <input id="con_nameContact" name="con_nameContact" class="form-inp requie" type="text" placeholder="Nombre">
+                            <input id="con_nameContact" name="con_nameContact" class="form-inp requie" type="text" placeholder="Nombre" >
                         </div>
                         <!--Email-->
                         <div class="col-md-6">
-                            <input id="con_emailContact" name="con_emailContact" class="form-inp requie" type="text" placeholder="Correo Electronico">
+                            <input id="con_emailContact" name="con_emailContact" class="form-inp requie" type="email" placeholder="Correo Electronico" required>
                         </div>
                         <div class="col-md-12">
                             <!--Message-->
-                            <textarea name="con_messageContact" id="con_messageContact" class="requie" placeholder="En que le podemos ayudar?" rows="8"></textarea>
+                            <textarea name="con_messageContact" id="con_messageContact" class="requie" placeholder="En que le podemos ayudar?" rows="8" required></textarea>
                             <button id="con_sendMessage" class="site-btn top_60" type="button">Enviar</button>
                         </div>
                     </div>
@@ -321,6 +322,9 @@
             <path d="M0 0 0 0 0 0 Z"></path>
         </svg>
 				<div id="message"></div>
+
+
+
 	</section>
 
 

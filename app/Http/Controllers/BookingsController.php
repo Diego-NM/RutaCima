@@ -19,9 +19,9 @@ class BookingsController extends Controller
             $price =  $request['price'];
             $totalPrice = str_replace(",","",$price);
             $idTour =  $request['idTour'];
-            $estado =  1;
+            $estado =  5;
             $fecha =  date("Y/m/d");;
-            DB::insert('insert into reservacion (usuario_ID,viaje_ID,estadoRC_ID,Cantidad_Personas,FechaHora,CostoTotal) values (?,?,?,?,?,?)',  [$idUsuario,$idTour,$estado,$numPeople,$fecha,$totalPrice]);
+            DB::insert('insert into reservacion (usuario_ID,viaje_ID,estado_ID,Cantidad_Personas,FechaHora,CostoTotal) values (?,?,?,?,?,?)',  [$idUsuario,$idTour,$estado,$numPeople,$fecha,$totalPrice]);
             $response = "insertado";
           }
          return $response;

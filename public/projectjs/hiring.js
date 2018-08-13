@@ -117,22 +117,37 @@ $(document).ready(function(){
         }
     });
 
-  $.ajax({
-          type: 'GET',
-          data: {},
-          url: 'selectProductForHire',
-          success: function(data) {
-             $("#productoContratacion").append(data);
-             return false;
-          }
-      });
-
   $("#enviarContratacionTour").click(function(){
     var tour = $("#tourContratacion").val();
     var cantidadPersonas = $("#numeroPersonasContratacion").val();
     var fechaEvento = $("#fechaContratacion").val();
     var tipoEvento = $("#tipoEnvento").val();
     var extra = "";
+    if(tour == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger el tour!"
+      });
+      return false;
+    }
+    if(cantidadPersonas == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger la cantidad de personas!"
+      });
+      return false;
+    }
+    if(fechaEvento  == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger la fecha del evento!"
+      });
+      return false;
+    }
+    if(tipoEvento  == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger el tipo de evento!"
+      });
+      return false;
+    }
+
     if($("#comidachkTour").prop('checked') == true){
          extra = $("#comidachkTour").val();
     }
@@ -189,6 +204,32 @@ $(document).ready(function(){
     if($("#otrochkTaller").prop('checked') == true){
          extra = $("#tallerOtroExtra").val();
     }
+
+    if(tour == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger o colocar el taller!"
+      });
+      return false;
+    }
+    if(cantidadPersonas == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger la cantidad de personas!"
+      });
+      return false;
+    }
+    if(fechaEvento  == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger la fecha del evento!"
+      });
+      return false;
+    }
+    if(tipoEvento  == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger el tipo de evento!"
+      });
+      return false;
+    }
+
     $.ajax({
           type: 'GET',
           data: {'contratacion': tour,
@@ -233,6 +274,31 @@ $(document).ready(function(){
     if($("#otrochkPrograma").prop('checked') == true){
          extra = $("#programaOtroExtra").val();
     }
+
+    if(tour == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger o colocar el programa!"
+      });
+      return false;
+    }
+    if(cantidadPersonas == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger la cantidad de personas!"
+      });
+      return false;
+    }
+    if(fechaEvento  == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger la fecha del evento!"
+      });
+      return false;
+    }
+    if(tipoEvento  == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger el tipo de evento!"
+      });
+      return false;
+    }
     $.ajax({
           type: 'GET',
           data: {'contratacion': tour,
@@ -271,6 +337,31 @@ $(document).ready(function(){
     }
     if($("#otrochkOtro").prop('checked') == true){
          extra = $("#otroExtra").val();
+    }
+
+    if(tour == ""){
+      $("#message").simpleAlert({
+        message: "Debe colocar el servicio que requiere!"
+      });
+      return false;
+    }
+    if(cantidadPersonas == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger la cantidad de personas!"
+      });
+      return false;
+    }
+    if(fechaEvento  == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger la fecha del evento!"
+      });
+      return false;
+    }
+    if(tipoEvento  == ""){
+      $("#message").simpleAlert({
+        message: "Debe escoger el tipo de evento!"
+      });
+      return false;
     }
     $.ajax({
           type: 'GET',

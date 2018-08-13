@@ -125,7 +125,7 @@ $("#con_crearUsuario").click(function(){
                $("#message").simpleAlert({
                  message: "Usuario Ingresado con éxito!"
                });
-               clearLoginForm();
+               clearCreateUserForm();
              }
            }
        });
@@ -173,6 +173,55 @@ $("#returnMainFromLogin").click(function(){
   window.location.href = "/";
 });
 
+$("#con_enviarReseteoContraseña").click(function(){
+      var oldPass = $("#viejaContrasenna").val();
+      var newPass = $("#nuevaContrasenna").val();
+      var repNewPass = $("#Rep_nuevaContrasenna").val();
+
+        if(oldPass == ""){
+          $("#message").simpleAlert({
+            message: "Digite contraseña anterior!"
+          });
+         return false;
+        }
+        if(newPass == ""){
+          $("#message").simpleAlert({
+            message: "Digite la nueva contraseña!"
+          });
+         return false;
+        }
+        if(repNewPass == ""){
+          $("#message").simpleAlert({
+            message: "Repita la nueva contraseña!"
+          });
+         return false;
+        }
+        if(newPass !== repNewPass){
+          $("#message").simpleAlert({
+            message: "Las nuevas contraseñas no son iguales!"
+          });
+         return false;
+        }
+
+         $.ajax({
+               type: 'GET',
+               data: { 'oldPass':oldPass,
+                       'newPass':newPass },
+               url: 'restorePassword',
+               success: function(data) {
+                 if(data === "CONTRASEÑA_ANTERIOR_INVALIDA"){
+                   $("#message").simpleAlert({
+                     message: "La contraseña Anterior no es correcta!"
+                   });
+                 }else{
+                   $("#message").simpleAlert({
+                     message: "Se ha cambiado la contraseña con exito!"
+                   });
+                 }
+               }
+           });
+});
+
 var clearRegisterForm = function(){
     $("#con_name").val("");
     $("#con_firstLastName").val("");
@@ -192,6 +241,17 @@ var clearLoginForm = function(){
 var clearForgotPasswordForm = function(){
   $("#con_nameReseteo").val("");
   $("#con_CorreoReseteo").val("");
+}
+
+var clearCreateUserForm = function(){
+  $("#con_name").val("");
+  $("#con_firstLastName").val("");
+  $("#con_secondLastName").val("");
+  $("#con_idNumber").val("");
+  $("#con_age").val("");
+  $("#con_email").val("");
+  $("#con_telephone").val("");
+  $("#con_password").val("");
 }
 
 });

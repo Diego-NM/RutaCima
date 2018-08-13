@@ -16,9 +16,18 @@ class RatingsController extends Controller
           }else{
             $value  =  $request['value'];
             $idTour =  $request['idTour'];
-            $fecha =  date("Y/m/d");;
-            DB::insert('insert into calificacion (usuario_ID,viaje_ID,FechaHora,Valor) values (?,?,?,?)',  [$idUsuario,$idTour,$fecha,$value]);
-            $response = "insertado";
+            $resultSelect = DB::select('select Valor from calificacion where viaje_ID ='.$idTour.'');
+            if(!empty($resultSelect)){
+              $array = json_decode(json_encode($resultSelect), True);
+              $sumRating = $array[0]['Valor'] + $value;
+              DB::update('update calificacion set Valor ='.$sumRating.' where viaje_ID = '.$idTour.'');
+              $response = "actualizado";
+            }else{
+              $fecha =  date("Y/m/d");;
+              DB::insert('insert into calificacion (usuario_ID,viaje_ID,FechaHora,Valor) values (?,?,?,?)',  [$idUsuario,$idTour,$fecha,$value]);
+              $response = "insertado";
+            }
+
           }
          return $response;
       }

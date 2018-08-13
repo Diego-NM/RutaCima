@@ -43,11 +43,15 @@ class PagesController extends Controller
       $data = array (
         'product' => $product
         );
-       return view('pages.detailProduct')->with($data);;
+       return view('pages.detailProduct')->with($data);
     }
 
     public function validacionInicioSesion(){
        return view('pages.validacionInicioSesion');
+    }
+
+    public function restorePassword(){
+       return view('pages.restorePassword');
     }
 
 }

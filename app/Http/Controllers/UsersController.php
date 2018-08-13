@@ -45,7 +45,7 @@ class UsersController extends Controller
         $password = $request['password'];
         $rolID = $request['rol'];
 
-        $result= DB::select('select * from usuario where NumeroIdentificacion='.$idNumber);
+        $result= DB::select("select * from usuario where CorreoElectronico='".$email."'");
         $array = json_decode(json_encode($result), True);
           if(!empty($array)){
             $response = "existe";
@@ -73,6 +73,23 @@ class UsersController extends Controller
               $response = "No existe";
             }
        return $response;
+    }
+
+    public function restorePassword(Request $request)
+    {
+      $OldPassword = $request['oldPass'];
+      $NewPassword = $request['newPass'];
+      $response = "";
+      $userID = $request->session()->get('userID');
+      $resultOldPass= DB::select("select Contrasena from usuario where ID_Usuario= ".$userID."");
+      $realOldPassword = json_decode(json_encode($resultOldPass), True);
+      if($realOldPassword[0]["Contrasena"] != $OldPassword){
+        $response = "CONTRASEÑA_ANTERIOR_INVALIDA";
+      }else{
+        $resultUpdatePass= DB::update("update usuario set Contrasena ='".$NewPassword."' where ID_Usuario= ".$userID."");
+        $response = "EXITO";
+      }
+      return $response;
     }
 
 

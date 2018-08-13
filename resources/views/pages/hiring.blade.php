@@ -120,7 +120,7 @@
 																				 <div class="col-md-6">
 																					 <div class="select-style" style="width:200px;">
 																						 <select id="tourContratacion">
-																							 <option>Seleccione</option>
+																							 <option value="">Seleccione</option>
 																						 </select>
 																					 </div>
 																				 </div>
@@ -168,9 +168,9 @@
 																				<div class="col-md-6">
 																					<div class="select-style" style="width:200px;">
 																						<select id="tipoEnvento">
-																							<option>Seleccione</option>
-																							<option value="1">Familiar</option>
-																							<option value="2">Empresarial</option>
+																							<option value="">Seleccione</option>
+																							<option value="1">Universitario</option>
+																							<option value="5">Familiar</option>
 																						</select>
 																					</div>
 																				</div>
@@ -276,9 +276,9 @@
 																				<div class="col-md-6">
 																					<div class="select-style" style="width:200px;">
 																						<select id="tipoEnventoTaller">
-																							<option>Seleccione</option>
-																							<option value="1">Familiar</option>
-																							<option value="2">Empresarial</option>
+																							<option value="">Seleccione</option>
+																							<option value="1">Universitario</option>
+																							<option value="5">Familiar</option>
 																						</select>
 																					</div>
 																				</div>
@@ -378,9 +378,9 @@
  		 																				<div class="col-md-6">
  		 																					<div class="select-style" style="width:200px;">
  		 																						<select id="tipoEnventoPrograma">
- 		 																							<option>Seleccione</option>
- 		 																							<option value="1">Familiar</option>
- 		 																							<option value="2">Empresarial</option>
+ 		 																							<option value="">Seleccione</option>
+																									<option value="1">Universitario</option>
+																									<option value="5">Familiar</option>
  		 																						</select>
  		 																					</div>
  		 																				</div>
@@ -475,9 +475,9 @@
 																		<div class="col-md-6">
 																			<div class="select-style" style="width:200px;">
 																				<select required id="tipoEnventoOtro">
-																					<option>Seleccione</option>
-																					<option value="1">Familiar</option>
-																					<option value="2">Empresarial</option>
+																					<option value="">Seleccione</option>
+																					<option value="1">Universitario</option>
+																					<option value="5">Familiar</option>
 																				</select>
 																			</div>
 																		</div>

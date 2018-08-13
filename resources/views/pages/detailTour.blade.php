@@ -93,7 +93,7 @@
 				<div class="col-lg-9 col-md-8">
 					<div class="blog-content">
 						<div class="blog-image">
-							<img src="images/single-blog.jpg" alt="">
+							<img src='http://localhost/Admin-RC/public/images/@foreach($tour as $item){{ $item['Ruta_Imagen'] }}@endforeach' alt'' style="height:600px" >
 						</div>
 						<h1 class="title top_30 bottom_30">@foreach($tour as $item)
 																								{{ $item['Titulo'] }}
@@ -204,11 +204,7 @@
 	<footer class="top_90">
 		<div class="container text-center">
 				<div class="social top_30 bottom_15">
-		            <a href="#"><i class="fab fa-facebook"></i>  </a>
-		            <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i>  </a>
-		            <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i>  </a>
-		            <a href="#"><i class="fab fa-behance" aria-hidden="true"></i>  </a>
-		            <a href="#"><i class="fab fa-dribbble" aria-hidden="true"></i>  </a>
+		            <a href="https://www.facebook.com/pg/RutaLaCima/"><i class="fab fa-facebook"></i>  </a>
 		        </div>
 			<p>Copyright © 2018 RutaCima, Todos los derechos reservados. </p>
 		</div>

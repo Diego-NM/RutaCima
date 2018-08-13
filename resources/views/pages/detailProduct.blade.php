@@ -49,99 +49,27 @@
 
 	<div class="blogs-single top_90">
 		<div class="container">
-			<button id="returnMainFromTourDetail" class="botonimagen" data-toggle="tooltip" title="Regresar"></button>
+			<button id="returnMainFromProductDetail" class="botonimagen" data-toggle="tooltip" title="Regresar"></button>
 			<div class="row">
-				<div class="col-lg-9 col-md-8">
+				<div class="col-lg-12 col-md-8">
 					<div class="blog-content">
 						<div class="blog-image">
-							<img src="images/single-blog.jpg" alt="">
+							<img src='http://localhost/Admin-RC/public/images/@foreach($product as $item){{ $item['Ruta_Imagen'] }}@endforeach' alt="" style="height:600px">
 						</div>
-						<h1 class="title top_30 bottom_30">@foreach($producto as $item)
-																								{{ $item['Titulo'] }}
+						<h1 class="title top_30 bottom_30">@foreach($product as $item)
+																								{{ $item['Nombre'] }}
 																								@endforeach
 																							</h1>
-								<p>@foreach($producto as $item)
-								{{ $item['Descripcion'] }}
-								@endforeach</p>
 						<br>
            	<br>
-						<blockquote>Incluye: <br>@foreach($producto as $item)
-						{{ $item['Incluye'] }}
+						<blockquote>Descripción: <br>@foreach($product as $item)
+						{{ $item['Descripcion'] }}
 						@endforeach</blockquote>
-						<p class="top_30"></p>
-						Fecha de salida: @foreach($producto as $item)
-						{{ $item['FechaHora_Salida'] }}
-						@endforeach<br>
-						Fecha de Regreso: @foreach($producto as $item)
-						{{ $item['FechaHora_Regreso'] }}
-						@endforeach<br>
-						Cupo: @foreach($producto as $item)
-						{{ $item['Cupo'] }}
-						@endforeach<br>
-						Requisitos: @foreach($producto as $item)
-						{{ $item['Requisitos'] }}
-						@endforeach<br>
-            		</div>
+					   <br>
+            </div>
 
-                <div class="form">
-                  <h3 class="widget-title top_60">Reserve Ya! </h3>
-                      <form class="contact-form top_30" method="POST">
-                          <div class="row">
-
-                              <div class="col-md-6">
-                                  <input id="CantidadPersonasProducto" name="CantidadPersonasProducto" class="form-inp requie" type="numeric" placeholder="Cantidad de personas">
-                              </div>
-
-                              <div class="col-md-6">
-                                  <input id="CostoTotalProducto" name="CostoTotalProducto" class="form-inp requie" type="text" placeholder="Costo" disabled>
-                              </div>
-                              <div class="col-md-12">
-                                  <button id="con_submit" class="site-btn top_60" type="submit">Reservar</button>
-                              </div>
-                          </div>
-                      </form>
-                  </div>
 				</div>
-				<div class="col-lg-3 col-md-4 sidebar">
 
-					<!-- Categories -->
-					<div class="categories top_45">
-						<h3 class="widget-title">Calificación del Tour</h3>
-						<ul class="top_30">
-							<li><a href="#">Excelente</a></li>
-							<li><a href="#">Bueno</a></li>
-							<li><a href="#">Regular</a></li>
-							<li><a href="#">Malo</a></li>
-							<li><a href="#">Muy malo</a></li>
-						</ul>
-					</div>
-
-           <br/>
-					<!-- Recent Posts -->
-					<div class="recent-post">
-						<h3 class="widget-title">Comentarios Recientes</h3>
-						<ul class="top_15">
-							<li>
-								<a href="#">
-									<h4 class="title">His boss would certainly come round with the doctor from the medical...</h4>
-									<span>02 March, 2018</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<h4 class="title">Gregor then turned to look out the window at the dull weather.</h4>
-									<span>02 March, 2018</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<h4 class="title">One morning, when Gregor Samsa woke from troubled dreams.</h4>
-									<span>02 March, 2018</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
 			</div> <!-- row end -->
 		</div><!-- container end -->
 	</div>
@@ -149,11 +77,7 @@
 	<footer class="top_90">
 		<div class="container text-center">
 				<div class="social top_30 bottom_15">
-		            <a href="#"><i class="fab fa-facebook"></i>  </a>
-		            <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i>  </a>
-		            <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i>  </a>
-		            <a href="#"><i class="fab fa-behance" aria-hidden="true"></i>  </a>
-		            <a href="#"><i class="fab fa-dribbble" aria-hidden="true"></i>  </a>
+		            <a href="https://www.facebook.com/pg/RutaLaCima/"><i class="fab fa-facebook"></i>  </a>
 		        </div>
 			<p>Copyright © 2018 RutaCima, Todos los derechos reservados. </p>
 		</div>
@@ -171,7 +95,7 @@
 <script src="{{asset('js/main.js')}}"></script>
 <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
 <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
-<script src="{{asset('projectjs/producto.js')}}"></script>
+<script src="{{asset('projectjs/product.js')}}"></script>
 <script src="{{asset('js/really-simple-jquery-dialog.js')}}"></script>
 
 </body>

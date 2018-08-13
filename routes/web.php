@@ -19,11 +19,13 @@ Route::get('/hiring', 'PagesController@hiring');
 Route::get('/detailTour/{id}', 'PagesController@detailTourPage');
 Route::get('/detailProduct/{id}', 'PagesController@detailProductPage');
 Route::get('/validacionInicioSesion',  'PagesController@validacionInicioSesion');
+Route::get('/restorePasswordBlade',  'PagesController@restorePassword');
 
 //USERS CONTROLLER
 Route::get('validateUser', 'UsersController@validateUser');
 Route::get('createUser', 'UsersController@createUser');
 Route::get('resetPassword', 'UsersController@resetPassword');
+Route::get('restorePassword', 'UsersController@restorePassword');
 
 //VIAJE CONTROLLER
 Route::get('selectTour', 'ViajeController@selectAllTours');
@@ -31,7 +33,6 @@ Route::get('selectTourForHire', 'ViajeController@selectAllToursForHire');
 
 //PRDOUCTS CONTROLLER
 Route::get('selectProducto', 'ProductsController@selectAllProducts');
-Route::get('selectProductForHire', 'ProductsController@selectAllProductsForHire');
 
 //CONTACT CONTROLLER
 Route::get('insertMessage', 'ContactsController@createMessage');
@@ -46,3 +47,6 @@ Route::get('insertRating', 'RatingsController@insertRating');
 //BOOKINGS CONTROLLER
 Route::get('insertBooking', 'BookingsController@insertBooking');
 Route::get('calculatePrice', 'BookingsController@calculatePrice');
+
+//COMMENTS CONTROLLER
+Route::get('showComments', 'CommentsController@showCommentsForTour');
