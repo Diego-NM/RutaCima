@@ -173,25 +173,29 @@
 					<!-- Recent Posts -->
 					<div class="recent-post">
 						<h3 class="widget-title">Comentarios Recientes</h3>
-						<ul class="top_15">
+						<ul class="top_15" id="ulComments">
+							@foreach($comment as $item)
 							<li>
 								<a href="#">
-									<h4 class="title">His boss would certainly come round with the doctor from the medical...</h4>
-									<span>02 March, 2018</span>
+									<h4 class="title">
+									{{ $item['Mensaje'] }}
+								  </h4>
+									<span>
+									{{ $item['Fecha'] }}
+									</span>
+									<span>
+									{{ $item['NombreUsuario'] }}
+									</span>
 								</a>
 							</li>
-							<li>
-								<a href="#">
-									<h4 class="title">Gregor then turned to look out the window at the dull weather.</h4>
-									<span>02 March, 2018</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<h4 class="title">One morning, when Gregor Samsa woke from troubled dreams.</h4>
-									<span>02 March, 2018</span>
-								</a>
-							</li>
+						 @endforeach
+					 </ul><br/><br/>
+						<ul>
+								<li>
+	 							 <h4 class="title">Añadir Comentario </h4><br/>
+	                    <textarea id="newComment" class="form-inp requie" style="height: 88px;"></textarea>
+	 						     	 <button style="margin:0px" id="addNewComment" class="site-btn top_60">Enviar Comentario</Button>
+	 						 </li>
 						</ul>
 					</div>
 				</div>
@@ -224,6 +228,7 @@
 <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('projectjs/viaje.js')}}"></script>
 <script src="{{asset('projectjs/booking.js')}}"></script>
+<script src="{{asset('projectjs/comments.js')}}"></script>
 <script src="{{asset('js/really-simple-jquery-dialog.js')}}"></script>
 
 

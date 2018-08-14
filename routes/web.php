@@ -49,4 +49,5 @@ Route::get('insertBooking', 'BookingsController@insertBooking');
 Route::get('calculatePrice', 'BookingsController@calculatePrice');
 
 //COMMENTS CONTROLLER
-Route::get('showComments', 'CommentsController@showCommentsForTour');
+Route::get('loadComment', 'CommentsController@loadComment');
+Route::get('saveNewComments', 'CommentsController@saveNewComments');

@@ -25,16 +25,15 @@ class PagesController extends Controller
     }
 
     public function detailTourPage($id){
-      $result= DB::select("select * from viaje where ID_Viaje ='".$id."' ");
+      $result= DB::select("select * from viaje where ID_Viaje ='".$id."' "); // Show Tour
+      $resultComments= DB::select("select c.Mensaje,c.Fecha,u.NombreUsuario from comunicacion c, usuario u where u.ID_Usuario = c.usuario_ID ORDER BY c.Fecha DESC LIMIT 5"); //Show Comments of tour
       $tour = json_decode(json_encode($result), True);
-      $dateLeaving = strtotime($tour[0]['FechaHora_Salida']);
-      $dateComming = strtotime($tour[0]['FechaHora_Regreso']);
+      $resultCom = json_decode(json_encode($resultComments), True);
       $data = array (
         'tour' => $tour,
-        'fechaSalida'=>date('d/m/y H:i:s',$dateLeaving),
-        'fechaLlegada'=>date('d/m/y H:i:s',$dateComming),
+        'comment' => $resultCom
       );
-       return view('pages.detailTour')->with($data);
+      return view('pages.detailTour')->with($data);
     }
 
     public function detailProductPage($id){
