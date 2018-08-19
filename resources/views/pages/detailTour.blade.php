@@ -165,6 +165,9 @@
 								    --><label for="1estrella" style="font-size:50px">★</label>
 								  </p>
 		           </form>
+							 <h2>@if(isset($valorTour))
+								 Calificacion: {{ $valorTour }} de 100
+							   @endif</h2>
 						<br/>
 						<br/>
 					</div>

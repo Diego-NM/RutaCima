@@ -213,10 +213,17 @@ $("#con_enviarReseteoContraseña").click(function(){
                    $("#message").simpleAlert({
                      message: "La contraseña Anterior no es correcta!"
                    });
+                    $("#viejaContrasenna").val("");
+                    $("#nuevaContrasenna").val("");
+                    $("#Rep_nuevaContrasenna").val("");
                  }else{
                    $("#message").simpleAlert({
                      message: "Se ha cambiado la contraseña con exito!"
                    });
+                   $("#viejaContrasenna").val("");
+                   $("#nuevaContrasenna").val("");
+                   $("#Rep_nuevaContrasenna").val("");
+                   window.location.href = "/mainAfterLogin";
                  }
                }
            });

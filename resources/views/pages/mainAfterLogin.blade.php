@@ -80,7 +80,7 @@
 					<li><a href="/hiring">Contratación</a></li>
 					<li><a href="#contact">Contactenos</a></li>
 					<li><a href="/restorePasswordBlade">Cambiar Contraseña</a></li>
-					<li><a href="/">Cerrar Sesión</a></li>
+					<li><a href="/endSession">Cerrar Sesión</a></li>
 				</ul>
 			</nav>
 			<div class="right-copyright">
@@ -229,6 +229,16 @@
 		<div class="container bottom_60">
 			<div class="section-title bottom_15">
 				<h2 class="title">TOURS DISPONIBLES<span class="number"></span> </h2>
+				<h3>Buscar por</h3>
+				<div class="col-md-4 offset-md-4">
+				<select class="form-control form-control-lg" id="filtroTour">
+					<option value="Todos">Todos</option>
+					<option value="Mejor_Calificados">Mejor Calificados</option>
+					<option value="Mas_Reservados">Mas Reservados</option>
+					<option value="Nacionales">Nacionales</option>
+					<option value="Internacionales">Internacionales</option>
+				</select>
+				</div>
 			</div>
 			<div class="row" id="toursDiv">
        <!-- CARGADO DINAMICO -->

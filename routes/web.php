@@ -14,6 +14,7 @@
 //PAGES CONTROLLER
 Route::get('/', 'PagesController@index');
 Route::get('/login', 'PagesController@login');
+Route::get('/endSession', 'PagesController@endSession');
 Route::get('/mainAfterLogin', 'PagesController@indexAfterLogin');
 Route::get('/hiring', 'PagesController@hiring');
 Route::get('/detailTour/{id}', 'PagesController@detailTourPage');
@@ -30,6 +31,11 @@ Route::get('restorePassword', 'UsersController@restorePassword');
 //VIAJE CONTROLLER
 Route::get('selectTour', 'ViajeController@selectAllTours');
 Route::get('selectTourForHire', 'ViajeController@selectAllToursForHire');
+Route::get('selectFilterAllTours', 'ViajeController@selectFilterAllTours');
+Route::get('selectFilterToursBetterRating', 'ViajeController@selectFilterToursBetterRating');
+Route::get('selectFilterToursMoreBooking', 'ViajeController@selectFilterToursMoreBooking');
+Route::get('selectFilterToursNacionals', 'ViajeController@selectFilterToursNacionals');
+Route::get('selectFilterToursInternacionals', 'ViajeController@selectFilterToursInternacionals');
 
 //PRDOUCTS CONTROLLER
 Route::get('selectProducto', 'ProductsController@selectAllProducts');
