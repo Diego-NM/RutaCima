@@ -37,10 +37,13 @@ class PagesController extends Controller
 
     public function detailTourPage($id){
       $result= DB::select("select * from viaje where ID_Viaje ='".$id."' "); // Show Tour
-      $resultComments= DB::select("select c.Mensaje,c.Fecha,u.NombreUsuario from comunicacion c, usuario u where u.ID_Usuario = c.usuario_ID ORDER BY c.Fecha DESC LIMIT 5"); //Show Comments of tour
+      //$resultComments= DB::select("select c.Mensaje,c.Fecha,u.NombreUsuario from comunicacion c, usuario u, viaje v where u.ID_Usuario = c.usuario_ID and c.ID_Viaje=v.ID_Viaje ORDER BY c.Fecha DESC LIMIT 5");
+      $resultComments= DB::select("select c.Mensaje,c.Fecha,u.NombreUsuario from comunicacion c , usuario u where c.ID_viaje = '".$id."' and u.ID_Usuario = c.usuario_ID ORDER BY c.Fecha DESC LIMIT 4");
+
+       //Show Comments of tour
       $tour = json_decode(json_encode($result), True);
       $resultCom = json_decode(json_encode($resultComments), True);
-      
+
 
       $resultCalificacion= DB::select("select Valor from calificacion where viaje_ID ='".$id."' "); // Show Tour
       if(!empty($resultCalificacion)){

@@ -26,7 +26,8 @@ class CommentsController extends Controller
     }
 
     public function loadComment(Request $request){
-      $result= DB::select("select c.Mensaje,c.Fecha,u.NombreUsuario from comunicacion c, usuario u where u.ID_Usuario = c.usuario_ID ORDER BY c.Fecha DESC LIMIT 5"); //Show Comments of tour
+      $id = $request["idTour"];
+      $result= DB::select("select c.Mensaje,c.Fecha,u.NombreUsuario from comunicacion c , usuario u where c.ID_viaje = ".$id." and u.ID_Usuario = c.usuario_ID ORDER BY c.Fecha DESC LIMIT 5"); //Show Comments of tour
       $resultComments = json_decode(json_encode($result), True);
       $comments = "";
       foreach($resultComments as $item){

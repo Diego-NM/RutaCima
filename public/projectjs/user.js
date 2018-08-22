@@ -41,7 +41,6 @@ $("#con_crearUsuario").click(function(){
   var firstLastName = $("#con_firstLastName").val();
   var secondLastName = $("#con_secondLastName").val();
   var idNumber = $("#con_idNumber").val();
-  var age = $("#con_age").val();
   var email = $("#con_email").val();
   var telephone = $("#con_telephone").val();
   var userName =  $("#con_email").val();
@@ -72,23 +71,11 @@ $("#con_crearUsuario").click(function(){
        });
      return false;
      }
-     if(age == ""){
-       $("#message").simpleAlert({
-         message: "Seleccione Fecha de nacimiento!"
-       });
-      return false;
-     }
      if(email == ""){
        $("#message").simpleAlert({
          message: "Digite Correo Electrónico!"
        });
      return false;
-     }
-     if(telephone == ""){
-       $("#message").simpleAlert({
-         message: "Digite telefono!"
-       });
-      return false;
      }
      if(userName == ""){
        $("#message").simpleAlert({
@@ -109,7 +96,6 @@ $("#con_crearUsuario").click(function(){
                    'firstLastName':firstLastName,
                    'secondLastName':secondLastName,
                    'idNumber':idNumber,
-                   'age':age,
                    'email':email,
                    'telephone':telephone,
                    'userName':userName,
@@ -143,7 +129,7 @@ $("#con_enviarContraseña").click(function(){
     }
     if(email == ""){
       $("#message").simpleAlert({
-        message: "Digite primer apellido!"
+        message: "Digite correo!"
       });
      return false;
     }

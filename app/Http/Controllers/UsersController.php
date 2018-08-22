@@ -38,7 +38,7 @@ class UsersController extends Controller
         $firstLastName = $request['firstLastName'];
         $secondLastName = $request['secondLastName'];
         $idNumber = $request['idNumber'];
-        $age = $request['age'];
+        //$age = $request['age'];
         $email = $request['email'];
         $telephone = $request['telephone'];
         $userName = $request['userName'];
@@ -50,7 +50,7 @@ class UsersController extends Controller
           if(!empty($array)){
             $response = "existe";
           }else{
-            DB::insert('insert into usuario (NombreCompleto,PrimerApellido,SegundoApellido,NumeroIdentificacion,Edad,CorreoElectronico,NumeroTelefonico,NombreUsuario,Contrasena,rol_ID) values (?,?,?,?,?,?,?,?,?,?)',  [$firstName, $firstLastName,$secondLastName,$idNumber,$age,$email,$telephone,$userName,$password,$rolID]);
+            DB::insert('insert into usuario (NombreCompleto,PrimerApellido,SegundoApellido,NumeroIdentificacion,CorreoElectronico,NumeroTelefonico,NombreUsuario,Contrasena,rol_ID,Tipo_Login) values (?,?,?,?,?,?,?,?,?,?)',  [$firstName, $firstLastName,$secondLastName,$idNumber,$email,$telephone,$userName,$password,$rolID,"Permanente"]);
             $response = "no existe";
           }
      return $response;

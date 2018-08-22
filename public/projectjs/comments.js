@@ -23,7 +23,7 @@ $(document).ready(function(){
 
                         $.ajax({
                               type: 'GET',
-                              data: {},
+                              data: {"idTour":idTour},
                               url: '/loadComment',
                               success: function(data) {
                                 $("#ulComments").html(data);

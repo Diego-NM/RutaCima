@@ -166,6 +166,7 @@ $(document).ready(function(){
                  'cantidadPersonas': cantidadPersonas,
                  'fechaEvento': fechaEvento,
                  'tipoEvento': tipoEvento,
+                 'tipoServicio': 2,
                  'extra': extra},
           url: 'insertHiring',
           success: function(data) {
@@ -236,6 +237,7 @@ $(document).ready(function(){
                  'cantidadPersonas': cantidadPersonas,
                  'fechaEvento': fechaEvento,
                  'tipoEvento': tipoEvento,
+                 'tipoServicio': 1,
                  'extra': extra},
           url: 'insertHiring',
           success: function(data) {
@@ -305,6 +307,7 @@ $(document).ready(function(){
                  'cantidadPersonas': cantidadPersonas,
                  'fechaEvento': fechaEvento,
                  'tipoEvento': tipoEvento,
+                 'tipoServicio': 3,
                  'extra': extra},
           url: 'insertHiring',
           success: function(data) {
@@ -369,6 +372,7 @@ $(document).ready(function(){
                  'cantidadPersonas': cantidadPersonas,
                  'fechaEvento': fechaEvento,
                  'tipoEvento': tipoEvento,
+                 'tipoServicio': 4,
                  'extra': extra},
           url: 'insertHiring',
           success: function(data) {

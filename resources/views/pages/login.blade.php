@@ -83,11 +83,11 @@
 																  <div class="row" id="loginForm">
 																	  <!--Email-->
 																	  <div class="col-md-6">
-																		  <input required id="con_emailInicioSesion" name="con_email" class="form-inp requie" type="text" placeholder="Correo Electronico">
+																		  <input  id="con_emailInicioSesion" name="con_email" class="form-inp " type="text" placeholder="Correo Electronico">
 																	  </div>
 																	  <!--Email-->
 																	  <div class="col-md-6">
-																		  <input required id="con_passwordInicioSesion" name="con_email" class="form-inp requie" type="password" placeholder="Contraseña">
+																		  <input  id="con_passwordInicioSesion" name="con_email" class="form-inp " type="password" placeholder="Contraseña">
 																	  </div>
 																  </div>
 																<!--End login Form -->
@@ -100,35 +100,32 @@
 																		<div class="row">
 																			<!--Email-->
 																			<div class="col-md-6">
-																				<input required id="con_name" name="con_name" class="form-inp requie" type="text" placeholder="Nombre Completo">
+																				<input  id="con_name" name="con_name" class="form-inp " type="text" placeholder="Nombre Completo *">
 																			</div>
 																			<!--Email-->
 																			<div class="col-md-6">
-																				<input  required id="con_firstLastName" name="con_firstLastName" class="form-inp requie" type="text" placeholder="Primer Apellido">
+																				<input   id="con_firstLastName" name="con_firstLastName" class="form-inp " type="text" placeholder="Primer Apellido *">
 																			</div>
 																		</div>
 																		<div class="row">
 																		  <div class="col-md-6">
-																			  <input required id="con_secondLastName" name="con_secondLastName" class="form-inp requie" type="text" placeholder="Segundo Apellido">
+																			  <input  id="con_secondLastName" name="con_secondLastName" class="form-inp " type="text" placeholder="Segundo Apellido *">
 																		  </div>
 																		  <div class="col-md-6">
-																			  <input required id="con_idNumber" name="con_idNumber" class="form-inp requie" type="text" placeholder="Identificación">
+																			  <input  id="con_idNumber" name="con_idNumber" class="form-inp " type="text" placeholder="Identificación *">
+																		  </div>
+																		</div>
+																		<div class='row'>
+																		  <div class="col-md-12">
+																			  <input  id="con_email" name="con_email" class="form-inp " type="text" placeholder="Correo Electrónico *">
 																		  </div>
 																		</div>
 																		<div class='row'>
 																		  <div class="col-md-6">
-																			  <input  required id="con_age" name="con_age" class="form-inp requie" type="text" placeholder="Edad">
+																			  <input   id="con_telephone" name="con_telephone" class="form-inp " type="text" placeholder="Teléfono">
 																		  </div>
 																		  <div class="col-md-6">
-																			  <input required id="con_email" name="con_email" class="form-inp requie" type="text" placeholder="Correo Electrónico">
-																		  </div>
-																		</div>
-																		<div class='row'>
-																		  <div class="col-md-6">
-																			  <input  required id="con_telephone" name="con_telephone" class="form-inp requie" type="text" placeholder="Teléfono">
-																		  </div>
-																		  <div class="col-md-6">
-																			  <input  required id="con_password" name="con_password" class="form-inp requie" type="password" placeholder="Contraseña">
+																			  <input   id="con_password" name="con_password" class="form-inp " type="password" placeholder="Contraseña *">
 																		  </div>
 																		</div>
 
@@ -143,17 +140,17 @@
 																<div class="row">
 																	<!--Email-->
 																	<div class="col-md-6">
-																		<input  required id="con_nameReseteo" name="con_nameReseteo" class="form-inp requie" type="text" placeholder="Nombre Completo">
+																		<input   id="con_nameReseteo" name="con_nameReseteo" class="form-inp " type="text" placeholder="Nombre Completo">
 																	</div>
 																	<!--Email-->
 																	<div class="col-md-6">
-																		<input  required id="con_CorreoReseteo" name="con_CorreoReseteo" class="form-inp requie" type="text" placeholder="Correo Electrónico">
+																		<input   id="con_CorreoReseteo" name="con_CorreoReseteo" class="form-inp " type="text" placeholder="Correo Electrónico">
 																	</div>
 																</div>
 															  </div>
 														   <!--End Forgot Password Form -->
                                 <button id="con_enviarContraseña" class="site-btn top_60" style="font-weight: bold;" type="button">Enviar</button>
-			 								    </div>
+			 								  </div>
 
 
 			 						 </div>

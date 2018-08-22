@@ -16,12 +16,13 @@ class HiringController extends Controller
       $fechaEvento = $request['fechaEvento'];
       $tipoEvento = $request['tipoEvento'];
       $descripcion = $request['extra'];
+      $tipoServicio = $request['tipoServicio'];
       $userID = $request->session()->get('userID');
       $estado = 5;
       $fechaTramite = date("d/m/Y");
       $costoTotal = 0;
         DB::insert('insert into contratacion (usuario_ID,estado_ID,tipoEvento_ID,tipoServicioID,Descripcion,FechaTramite,FechaServicio,Costo_Total)
-        values (?,?,?,?,?,?,?,?)',[$userID,$estado,$tipoEvento,1,$contratacion.", ".$descripcion,$fechaTramite,$fechaEvento,$costoTotal]);
+        values (?,?,?,?,?,?,?,?)',[$userID,$estado,$tipoEvento,$tipoServicio,$contratacion.", ".$descripcion,$fechaTramite,$fechaEvento,$costoTotal]);
         $response = 1;
 
       return $response;
