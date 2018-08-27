@@ -187,7 +187,7 @@
 																				 <input   type="checkbox"  id="comidachkTour" value="Comida">
 																				 <span class="checkmark"></span>
 																				 </label>
-																				 <label>Estadia
+																				 <label>Estadía
 																					 <input  type="checkbox"  id="estadischkTour" value="Estadia">
 																					 <span class="checkmark"></span>
 																				 </label>
@@ -295,7 +295,7 @@
 																					<input type="checkbox"  id="comidachkTaller"  value="Comida">
 																					<span class="checkmark"></span>
 																					</label>
-																					<label>Estadia
+																					<label>Estadía
 																						<input type="checkbox"  id="estadischkTaller"  value="Estadia">
 																						<span class="checkmark"></span>
 																					</label>
@@ -397,7 +397,7 @@
  		 																					<input type="checkbox"  id="comidachkPrograma" value="Comida">
  		 																					<span class="checkmark"></span>
  		 																					</label>
- 		 																					<label>Estadia
+ 		 																					<label>Estadía
  		 																						<input type="checkbox"  id="estadischkPrograma" value="Estadia">
  		 																						<span class="checkmark"></span>
  		 																					</label>
@@ -494,7 +494,7 @@
 																			<input type="checkbox"  id="comidachkOtro" value="Comida">
 																			<span class="checkmark"></span>
 																			</label>
-																			<label>Estadia
+																			<label>Estadía
 																				<input type="checkbox"  id="estadischkOtro" value="Estadia">
 																				<span class="checkmark"></span>
 																			</label>

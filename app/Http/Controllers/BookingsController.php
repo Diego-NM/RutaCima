@@ -25,9 +25,15 @@ class BookingsController extends Controller
             $bookingSpace = json_decode(json_encode($resultBookingSpace), True);
             if($bookingSpace[0]["Cupo"] >= $numPeople){
               $spaceLeft = $bookingSpace[0]["Cupo"] - $numPeople;
-              DB::insert('insert into reservacion (usuario_ID,viaje_ID,estado_ID,Cantidad_Personas,FechaHora,CostoTotal) values (?,?,?,?,?,?)',  [$idUsuario,$idTour,$estado,$numPeople,$fecha,$totalPrice]);
-              DB::update('update viaje set Cupo ='.$spaceLeft.' where ID_Viaje = '.$idTour.'');
-              $response = "insertado";
+              $result_Validation=DB::select("select r.ID_Reservacion from reservacion r, usuario u where r.usuario_ID=u.ID_Usuario and r.usuario_ID='".$idUsuario."'");
+              $array = json_decode(json_encode($result_Validation), True);
+              if(empty($array)){
+                DB::insert('insert into reservacion (usuario_ID,viaje_ID,estado_ID,Cantidad_Personas,FechaHora,CostoTotal) values (?,?,?,?,?,?)',  [$idUsuario,$idTour,$estado,$numPeople,$fecha,$totalPrice]);
+                DB::update('update viaje set Cupo ='.$spaceLeft.' where ID_Viaje = '.$idTour.'');
+                $response = "insertado";
+              }else{
+                $response = "YA_POSEE_RESERVACION";
+              }
             }else{
               $response = "CUPO_COMPLETO";
             }

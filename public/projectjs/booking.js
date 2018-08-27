@@ -41,12 +41,21 @@ $(document).ready(function(){
                             $("#CostoTotalReservacion").val("");
                             return false;
                       }else{
+                           if(data == "YA_POSEE_RESERVACION"){
+                             $("#message").simpleAlert({
+                               message: "Su usuario ya posee una reservación asosiada!"
+                             });
+                             $("#CantidadPersonasReservacion").val("");
+                             $("#CostoTotalReservacion").val("");
+                             return false;
+                           }else{
                             $("#message").simpleAlert({
                               message: "Reservación Guardada con exito, los administradores se pondran en contacto con usted!"
                             });
                             $("#CantidadPersonasReservacion").val("");
                             $("#CostoTotalReservacion").val("");
                             return false;
+                           }
                       }
                     }
                     return false;

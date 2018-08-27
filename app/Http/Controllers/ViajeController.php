@@ -10,7 +10,7 @@ class ViajeController extends Controller
 {
     public function selectAllTours()
     {
-       $result= DB::select("select * from viaje where estadoViaje_ID = 2");
+       $result= DB::select("select * from viaje where estadoViaje_ID = 2 and Cupo > 0");
        $tourArray = json_decode(json_encode($result), True);
        $tour = "";
          if(!empty($tourArray)){
