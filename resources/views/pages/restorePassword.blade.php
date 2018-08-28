@@ -58,9 +58,8 @@
 					</div>
 			</div>
 		</div>
-  <br/><br/><br/><br/>
    <h1>Cambio de Contraseña</h1>
-	 <br/><br/><br/>
+
 					<div class="col-md-8 offset-md-2">
 
                  <!--Forgot Password Form -->
