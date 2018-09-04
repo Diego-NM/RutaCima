@@ -2,20 +2,20 @@ $(document).ready(function(){
 
 
   $('#DivfechaContratacion').datetimepicker({
-          format: 'mm/dd/yyyy HH:mm:ss',
-          locale: 'es',
+          format: 'dd/mm/yyyy HH:mm:ss',
+
+
         })
   $('#DivfechaContratacionTaller').datetimepicker({
-          format: 'mm/dd/yyyy HH:mm:ss',
-          locale: 'es',
+    format: 'dd/mm/yyyy HH:mm:ss',
+
+
         })
   $('#DivfechaContratacionPrograma').datetimepicker({
-          format: 'mm/dd/yyyy HH:mm:ss',
-          locale: 'es',
+            format: 'dd/mm/yyyy HH:mm:ss',
         })
   $('#DivfechaContratacionOtro').datetimepicker({
-          format: 'mm/dd/yyyy HH:mm:ss',
-          locale: 'es',
+          format: 'dd/mm/yyyy HH:mm:ss',
         })
 
         //Taller

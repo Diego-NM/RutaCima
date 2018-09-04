@@ -13,7 +13,13 @@ class HiringController extends Controller
   {
       $contratacion = $request['contratacion'];
       $cantidadPersonas = $request['cantidadPersonas'];
-      $fechaEvento = $request['fechaEvento'];
+      $fechaEventoI = $request['fechaEvento'];
+      
+      //Date Conversion
+      $convertDate =date('Y-m-d h:m:s', strtotime(str_replace('/','-',$fechaEventoI)));
+      $fechaEvento = $convertDate;
+        //Date Conversion
+
       $tipoEvento = $request['tipoEvento'];
       $descripcion = $request['extra'];
       $tipoServicio = $request['tipoServicio'];
